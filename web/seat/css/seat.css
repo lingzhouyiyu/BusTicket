@@ -1,0 +1,22 @@
+.mainbg{background:#fff}
+.mainpage{padding-bottom:3em}
+.index_topbar{margin:.4em;border-radius:.4em;background:url(../../common/images/index_bg02.jpg) no-repeat;background-size:100% 100%;padding:1em 0 1em 0;border-radius:.4em}
+.seat_sign{background:rgba(255,255,255,.73);padding:.5em 0;border:1px solid #ffb989;box-shadow:0 3px 2px #f79d72;margin:0 .5em 1em .5em;border-radius:.4em;overflow:hidden}
+.seattop_box01{width:1em;height:1em;background:#3cc;border-radius:4px;margin-right:5px}
+.seattop_box02{width:1em;height:1em;background:#b1b1b1;border-radius:4px;margin-right:5px}
+.seattop_box03{width:1em;height:1em;background:#fd924a;border-radius:4px;margin-right:5px}
+.seattop_box04{width:1em;height:1em;background:#F60;border-radius:4px;margin-right:5px}
+.seat_box{padding-top:1em .3em 0 .3em;text-align:center}
+.seat-main{width:18em;overflow:hidden}
+.seatitem{width:2.6em;height:2.6em;float:left;margin-left:.3em;margin-right:.3em;border-radius:5px;font-size:.9em}
+.seats_btn{padding:1em 2em 2em 2em}
+.seat_sure{background:#F60;height:2.8em;border-radius:.4em;color:#fff}
+.kxbox{background:url(../../common/images/seat_kx.png) no-repeat; background-size:100% 100%; color:#fff}
+.yxbox{background: url(../../common/images/seat_yx.png); background-size:100% 100%; color:#fff}
+.bkxbox,.ysbox{background:url(../../common/images/seat_bkx.png);  background-size:100% 100%;color:#fff}
+.ylbox{background:#F60;color:#fff}
+.seat_row{margin-bottom:.5em}
+.seatbox{overflow:auto;padding:.6em}
+.seattag{font-size:.85em;color:#969696;margin-right:.4em}
+.addsure_box{position:fixed;left:0;bottom:0;width:100%}
+.adsure_btn{background:#fff;height:2.6em;box-shadow:0 -2px 3px #cdcdcd}

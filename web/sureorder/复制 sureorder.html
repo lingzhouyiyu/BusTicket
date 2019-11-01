@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title>订单确认</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/mui.min.css" />
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/idangerous.swiper.css" />
+		<link rel="stylesheet" href="../common/css/icon.css" />
+		<link rel="stylesheet" href="../common/css/ui-base.css" />
+		<link rel="stylesheet" href="../common/css/ui-box.css" />
+		<link rel="stylesheet" href="../common/css/ui-color.css" />
+		<link rel="stylesheet" href="../common/css/common.css?v=1" />
+		<link rel="stylesheet" href="../common/css/control.css" />
+		<link rel="stylesheet" href="css/sureorder.css" />
+	</head>
+	<body class="bc-text um-vp mainbg">
+		<div class="ub ub-ver mainpage">
+			<!--头部背景选择框-->
+			<div class="ub ub-ver main_top">
+				<div class="ub ub-ver index_topbar">
+					<div class="ub ft085 umar-t marl06 marr06 colwhite">
+						<div class="ub ub-ac ub-f1 ub-fh">
+							<span class="usedate">2017-01-01</span>
+						</div>
+						<div class="ub ub-ac ub-pe ub-f1 ub-fh">
+							<span class="usetime">00:00</span>发车
+						</div>
+					</div>
+					<div class="ub ub-ac colwhite marb06">
+						<div class="ub ub-pc ub-f1 sure_left ftb ft125 marl06">
+							<span class="startstation">昆明</span>
+						</div>
+						<div class="ub ub-ac ub-f1 ub-ver sure_center ft09">
+
+							<div class="ub">
+								<img src="../common/images/carimg02.png" />
+							</div>
+						</div>
+						<div class="ub ub-pc ub-f1 sure_left ftb ft125 marr06">
+							<span class="endstation">昭通</span>
+						</div>
+					</div>
+					<div class="ub ft085 umar-t marl06 marr06 colwhite">
+						<div class="ub ub-ac ub-f1 ub-fh">
+							<span>线路：</span>
+							<span class="startname"></span>
+							<!--<span class="ub center_line"></span>
+							<span class="endname"></span>-->
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!--班车信息-->
+			<div class="ub sc-text carinfor">
+				<div class="ub ub-f1 carinfor_left">
+					<span>班次信息</span>
+					<span class="umar-l carnum">0</span>次
+				</div>
+				<div class="ub carinfor_right ft085 colhgreen gorule">
+					购票须知
+				</div>
+			</div>
+			<div class="ub ub-ver conact_box">
+				<div class="ub ub-ac ub-pc adduse_btn">
+					<div class="ub ub-ac">
+						<img class="ub ub-img add_img" src="../common/images/add.png" />
+					</div>
+					<div class="ub ub-ac colgloden">添加乘客</div>
+				</div>
+				<!--联系人-->
+				<div class="ub ub-ver use_list">
+
+				</div>
+			</div>
+			<div class="ub dbcheck_box">
+				<div class="ub ub-f1 ub-ac">
+					<div class="ub ub-ac marr06">
+						<img style="width: 1.35em;" class="ub ub-img" src="../common/images/warm01.png" />
+					</div>
+					<div class="ub colgloden ub-f1 ub-ac">
+						昆明出发的班次只能在发车前两小时退票
+					</div>
+				</div>
+				<div class="ub ub-ac ft09 colred dhide">
+					暂不支持
+				</div>
+			</div>
+			<!--积分抵扣-->
+			<div class="ub dbcheck_box dhide">
+				<div class="ub ub-f1 ub-ac check_left isinstall" dbradio="radiochecked">
+					<div class="ub ub-ac marr06">
+						<img class="ub ub-img radio_img radio_before dhide" src="../common/images/radio_imgbefore.png" />
+						<img class="ub ub-img radio_img radio_after" src="../common/images/radio_imgafter.png" />
+					</div>
+					<div class="ub ub-ac">
+						<div class="ub">
+							<span class="colgloden">0</span><span>积分</span>
+						</div>
+						<div class="ub marl1">
+							可用<span class="colgloden">0</span><span class="colgloden">积分</span>
+							<span class="colgloden">(抵扣</span><span class="colgloden">0</span><span class="colgloden">元)</span>
+						</div>
+					</div>
+				</div>
+				<div class="ub">
+					<div class="ub fa ub-ac ft15 colgloden fa-angle-right"></div>
+				</div>
+			</div>
+
+			<!--优惠券抵扣-->
+			<div class="ub dbcheck_box dhide">
+				<div class="ub ub-f1 ub-ac check_left isinstall" dbradio="radiochecked">
+					<div class="ub ub-ac marr06">
+						<img class="ub ub-img radio_img radio_before dhide" src="../common/images/radio_imgbefore.png" />
+						<img class="ub ub-img radio_img radio_after" src="../common/images/radio_imgafter.png" />
+					</div>
+					<div class="ub ub-ac">
+						<div class="ub">
+							使用优惠券<span class="colgloden">(可减去</span>
+							<span class="colgloden">0</span><span class="colgloden">元)</span>
+						</div>
+					</div>
+				</div>
+				<div class="ub">
+					<div class="ub fa ub-ac ft15 colgloden fa-angle-right"></div>
+				</div>
+			</div>
+
+			<!--保险-->
+			<div class="ub ub-ver ticket_box dhide">
+				<div class="ub ub-ac ticket_top">
+					<div class="ub ub-ac ticket_tl">
+						<img class="ub  ub-img" src="../common/images/safe_icon.png" />
+					</div>
+					<div class="ub colgloden ft085">是否购买保险</div>
+				</div>
+				<div class="ub ticket_botm">
+					<div class="ub ub-f1 ub-ac ub-pc ub-fh">
+						<div class="radiobox colhgreen umar-r">
+							<input type="radio" name="radio" checked="checked" value="1" class="uabs ub-con checkticket" rel="0">
+						</div>
+						<div class="ub ub-ac colgloden">是</div>
+					</div>
+					<div class="ub ub-f1 ub-ac ub-pc ub-fh">
+						<div class="radiobox colhgreen umar-r">
+							<input type="radio" name="radio" value="1" class="uabs ub-con checkticket" rel="0">
+						</div>
+						<div class="ub ub-ac colgloden">否</div>
+					</div>
+				</div>
+			</div>
+			<!--提示信息-->
+			<div class="ub ub-ver buyinfor">
+				<div class="ub ub-ac umar-b colred">
+					*微信购票每次仅限购买5张车票；
+				</div>
+				<div class="ub ub-ac umar-b colred">
+					*微信购票暂不支持改签，请核对购票信息后再下单；
+				</div>
+				<div class="ub ub-ac umar-b colred">
+					*不提供儿童票、军残票购买、特殊票服务，如需购票请 到车站咨询。
+				</div>
+				<div class="ub ub-ac umar-b colred dhide">
+					*昆明出发的班次只能在发车前两小时退票，如需退票请到窗口咨询。
+				</div>
+				<div class="ub ub-ac umar-b colred">
+					*保险为自愿购买，不需要时请手动取消。系统不支持单独退保，需与客票订单一起退。
+				</div>
+			</div>
+		</div>
+		<!--联系人弹出层 -->
+		<div class="ub ub ub-ver adduse_page content_box dhide">
+			<div class="ub ub-ver content_main dbcontact">
+				<div class="ub ub-ac ub-pc content_top colgloden">
+					<div class="ub ub-f1 ub-fh exit_add">取消</div>
+					<div class="ub ub-ac ub-pc ub-f1 ub-fh goadduse">
+						<div class="ub ub-ac ub-pc">
+							<img class="ub ub-ac ub-img add_img umar-r" src="../common/images/add_img.png" />
+						</div>
+						<div class="ub ub-ac">新增乘客</div>
+					</div>
+					<div class="ub ub-f1 ub-fh ub-pe sure_add">
+						<div class="ub ub-ac ub-pc dbsure_btn">确认</div>
+					</div>
+				</div>
+				<div class="ub ub-ver conact_list">
+
+				</div>
+				<div class="ub ub-ac ub-pc ub-f1 addsure_box dhide">
+					<div class="ub ub-f1 ub-ac ub-pc adsure_btn">
+						<div class="ub ub-ac ub-pc colgloden">确定</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--底部按钮-->
+		<div class="ub ub-f1 sure_footer">
+			<div class="ub ub-f1 ub-fh ub-ac ub-pc look_pay" style="background: #323232;" rel="up">
+				<div class="ub sfooter_left colwhite">
+					<span>总价:</span>
+					<span class="countmoney">0</span>元
+				</div>
+				<div class="ub umar-l colwhite fa fa-caret-down ft125 dbfsign"></div>
+			</div>
+			<div class="ub ub-f1 ub-fh ub-ac ub-pc sfooter_right gotopay">
+				支付
+			</div>
+		</div>
+		<!--底部弹出层-->
+		<div class="pay_detail dhide">
+			<div class="ub ub-f1 sc-text detailmain">
+				<div class="ub ub-f1 ub-ver bg-white">
+					<div class="ub ub-ac paydeail_top">支付明细</div>
+					<div class="ub ub-ac paydeail_item">
+						<div class="ub marr1">
+							汽车票
+						</div>
+						<div class="ub ub-pe">
+							￥<span class="fullTicketPrice">0</span>*
+							<span class="fullTicketCount">0</span>人
+						</div>
+					</div>
+					<div class="ub ub-ac paydeail_item safecheck" rel="checked">
+						<div class="ub marr1">
+							保险
+						</div>
+						<div class="ub ub-f1">
+							￥<span class="fullsafe">0</span>*
+							<span class="safenum">0</span>份
+						</div>
+						<div class="ub ub-ac">
+							<img class="ub ub-img radio_img radio_before dhide" src="../common/images/radio_imgbefore.png" />
+							<img class="ub ub-img radio_img radio_after" src="../common/images/radio_imgafter.png" />
+						</div>
+					</div>
+					<div class="ub ub-ac paydeail_item">
+						<div class="ub marr1">
+							抵扣
+						</div>
+						<div class="ub ub-pe ">
+							<span>-</span> ￥
+							<span>0</span>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--座位模板-->
+		<div class="usetemp dhide">
+			<div class="ub use_item">
+				<div class="ub ub-ac conact_delete">
+					<img class="ub ub-img " src="../common/images/close_img01.png" />
+				</div>
+				<div class="ub sc-text ub-ac ft09  marl1 marr1">
+					<span class="seatNum">0</span>座
+				</div>
+
+				<div class="ub ub-f1 ub-ac ub-pe contact_right">
+					<div class="ub ub-f1 ub-pe colred umar-r ft09 adduse_before dhide">
+						添加乘客信息
+					</div>
+					<div class="ub ub-ver ub-f1 adduse_after">
+						<div class="ub bc-text putname"></div>
+						<div class="ub ft080 colccc putidcar"></div>
+					</div>
+					<div class="ub fa ub-ac ft15 colgloden fa-angle-right"></div>
+				</div>
+			</div>
+		</div>
+		<!--请求加载显示-->
+		<div class='load-wrapper'>
+			<img src='../common/images/load.gif'>
+		</div>
+		<script id='passengerTmp' type="text/html">
+			{{each}}
+			<div class="ub use_item" fidtype="01">
+				<div class="ub ub-ac conact_delete marr1" onclick="deletuse(this)">
+					<img class="ub ub-img " src="../common/images/close_img01.png">
+				</div>
+				<div class="ub ub-f1 ub-ac ub-pe contact_right" seatmobile="{{$value.Fphone}}" onclick="showuses()">
+					<div class="ub ub-f1 ub-pe colred umar-r ft09 adduse_before dhide">
+						添加乘客信息
+					</div>
+					<div class="ub ub-ver ub-f1 adduse_after">
+						<div class="ub bc-text putname">{{$value.usename}}</div>
+						<div class="ub ft080 colccc putidcar">{{$value.Fidcar}}</div>
+					</div>
+					<div class="ub fa ub-ac ft15 colgloden fa-angle-right"></div>
+				</div>
+			</div>
+			{{/each}}
+		</script>
+		<!--三个联系人模板-->
+		<div class="cktemp dhide">
+			<div class="ub ub-f1 ub-ac conact_item default_item cktemp">
+				<div class="ub ub-f1 choose_use" rel="check">
+					<div class="ub ub-ac cont_iteml marr1">
+						<img class="ub ub-img check_img check_before" src="../common/images/check_before.png" />
+						<img class="ub ub-img check_img check_after dhide" src="../common/images/check_after.png" />
+					</div>
+					<div class="ub ub-pc ub-ver cont_itemc colgloden ub-f1">
+						<div class="ub Fname"></div>
+						<div class="ub ft085 colgop Fidcar">0000</div>
+					</div>
+				</div>
+				<div class="ub ub-ac cont_itemr marr1 use_edit">
+					<img class="ub ub-img edit_img" src="../common/images/edit_img.png" />
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../common/js/mui.min.js"></script>
+	<script type="text/javascript" src="../common/js/Fsuper.js?v=2.0"></script>
+	<script type="text/javascript" src="../common/js/template.js"></script>
+	<script type="text/javascript">
+		var stationBaseCode = localStorage.getItem("stationBaseCode");
+		$(function() {
+			var needRefresh03 = sessionStorage.getItem("need03-refresh");
+			if(needRefresh03) {
+				sessionStorage.removeItem("need03-refresh");
+				window.location.reload();
+			}
+			iosrefresh();
+			loadseatinfor(); //获取座位信息
+			totalmoney(); //计算总价
+			threeuse(); //加载乘客列表
+			(function($) {
+				$.getUrlParam = function(name) {
+					var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+					var r = window.location.search.substr(1).match(reg);
+					if(r != null) return unescape(r[2]);
+					return null;
+				}
+			})(jQuery);
+
+			ucode = $.getUrlParam('code');
+			ustate = $.getUrlParam("state");
+			//alert(ucode);
+			//alert(ustate);
+			sendcode();
+			var isadd = 0;
+			isadd = localStorage.getItem("isadd");
+			if(isadd == 1) {
+				$(".conact_list").empty();
+				threeuse(); //加载乘客列表
+				$(".adduse_page").removeClass("dhide");
+			}
+		});
+
+		function sendcode() {
+			var furl = "/AboutClassAPIManage/AboutClassAPI/AddConvertOpenid";
+			var queryJson = {
+				state: ustate,
+				code: ucode
+			}
+			$.ajax({
+				url: Serverurl + furl,
+				type: "post",
+				async: false,
+				dataType: "json",
+				data: queryJson,
+				success: function(result) {
+					//var message = result.message;
+					//alert(message);
+				}
+			});
+		}
+
+		var curuse, curitem, seatarry = [];
+		var basecode = localStorage.getItem("basecode");
+		var seatlegth = 0;
+		var ischeckseat = localStorage.getItem("ischeckseat");
+		var insuranceprice = localStorage.getItem("insuranceprice");
+		var insurancecode = localStorage.getItem("insurancecode");
+		var router = 0;
+		//加载座位信息
+		function loadseatinfor() {
+			if(ischeckseat == 0) {
+				router = 0;
+				getseatinfor();
+			}
+			if(ischeckseat == 1) {
+				router = 1;
+				checkseatinfor();
+			}
+		}
+
+		//选座获取座位信息
+		function checkseatinfor() {
+			var sendinfor = localStorage.getItem("sendinfor");
+			var seatInfor = JSON.parse(sendinfor);
+			var startcode = localStorage.getItem("startcode");
+			var classId = localStorage.getItem("classId");
+			var usedate = localStorage.getItem("usedate");
+			var usetime = localStorage.getItem("usetime");
+			var startstion = localStorage.getItem("startstion");
+			var endstion = localStorage.getItem("endstion");
+			var carnum = localStorage.getItem("bcdm");
+			var stationline = localStorage.getItem("stationline");
+			var endline = localStorage.getItem("endline");
+			$(".usedate").text(usedate);
+			$(".usetime").text(usetime);
+			$(".startstation").text(startstion);
+			$(".endstation").text(endstion);
+			$(".startname").text(stationline);
+			$(".endname").text(endline);
+			$(".carnum").text(carnum);
+			seatInfor = seatInfor.uselist;
+			var length = seatInfor.length;
+			seatlegth = length;
+			console.log(seatInfor);
+			if(length > 0) {
+				for(var i = 0; i < length; i++) {
+					var seatmun = seatInfor[i].SeatNum;
+					seatarry.push(seatmun);
+				}
+			}
+			console.log(seatarry);
+		}
+
+		//不选座获取座位信息
+		function getseatinfor() {
+			var furl = "/YunSPOrderManage/YunSPOrderWX/WebServicAction";
+			var startcode = localStorage.getItem("startcode");
+			var classId = localStorage.getItem("classId");
+			var usedate = localStorage.getItem("usedate");
+			var usetime = localStorage.getItem("usetime");
+			var startstion = localStorage.getItem("startstion");
+			var endstion = localStorage.getItem("endstion");
+			var carnum = localStorage.getItem("bcdm");
+			var stationline = localStorage.getItem("stationline");
+			var endline = localStorage.getItem("endline");
+			$(".usedate").text(usedate);
+			$(".usetime").text(usetime);
+			$(".startstation").text(startstion);
+			$(".endstation").text(endstion);
+			$(".startname").text(stationline);
+			$(".endname").text(endline);
+			$(".carnum").text(carnum);
+			var senddata = {
+				sprq: usedate,
+				bcdm: classId,
+			}
+
+			var postdata = JSON.stringify(senddata);
+			var parm = {
+				currentStationId: startcode,
+				currentModel: "webSaleTick",
+				currentOp: "querySeat",
+				parmsOrDataJson: postdata
+
+			}
+			$.ajax({
+				url: Serverurl + furl,
+				type: "get",
+				async: false,
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var datas = result.data;
+					var length = datas.length;
+					if(length > 0) {
+						for(var i = 0; i < length; i++) {
+							addseat(datas[i]);
+						}
+					} else {
+						return;
+					}
+				}
+			});
+		}
+
+		function addseat(ruselt) {
+			var list = $(".seat-list");
+			var seatstatus = ruselt.zwzt;
+			var seatmun = ruselt.zwhm;
+			var carrychild = ruselt.isxietong;
+			var item = $(".seattemp .seat-item").clone();
+
+			if(seatstatus == 0 && seatmun > 0) { //可选
+				seatarry.push(seatmun);
+			}
+
+		}
+
+		//删除乘车人
+		function deletuse(dom) {
+			$(dom).parent().remove();
+			totalmoney();
+		}
+		//点击添加乘客信息
+		$(".adduse_btn").click(function() {
+			$(".conact_list").empty();
+			threeuse(); //加载乘客列表
+			showuses();
+		})
+
+		//移除模板
+		function showuses() {
+			$(".adduse_page").removeClass("dhide");
+		}
+
+		//蒙版点击
+		$(".adduse_page").click(function() {
+			localStorage.removeItem('isadd');
+			$(".adduse_page").addClass("dhide");
+		});
+
+		//计算总价
+		var safemoney = 0;
+		var totalsafe = 0;
+
+		function totalmoney() {
+			var count = $(".use_list .use_item").length;
+			var fullTicketPrice = localStorage.getItem("fullTicketPrice");
+			var isInsurance = $(".safecheck").attr("rel");
+			var startstion = localStorage.getItem("startstion");
+			fullTicketPrice = parseInt(fullTicketPrice);
+			if(insuranceprice == null || insuranceprice == "") {
+				insuranceprice = 0;
+			}
+			safemoney = parseInt(insuranceprice);
+			//			if((fullTicketPrice * count) <= 50) {
+			//				safemoney = 3
+			//			}
+			//			if(50 < (fullTicketPrice * count) <= 300) {
+			//				safemoney = 5
+			//			}
+			//			if((fullTicketPrice * count) > 300) {
+			//				safemoney = 10
+			//			}
+
+			if(isInsurance == "checked") {
+				safemoney = safemoney;
+			}
+			if(isInsurance == "check") {
+				safemoney = 0;
+			}
+			if(startstion == "昆明") {
+				safemoney = 0;
+			}
+			totalsafe = safemoney * count;
+			var totalmoney = count * (fullTicketPrice + safemoney);
+			$(".countmoney").text(totalmoney);
+			$(".fullTicketPrice").text(fullTicketPrice);
+			$(".fullTicketCount").text(count);
+			$(".fullsafe").text(safemoney);
+			$(".safenum").text(count);
+		}
+		//是否购买保险
+		//保险选择
+		$(".safecheck").click(function() {
+			var radio_before = $(this).find(".radio_before");
+			var radio_after = $(this).find(".radio_after");
+			var rel = $(this).attr("rel");
+			if(rel == "check") {
+				$(radio_before).addClass("dhide");
+				$(radio_after).removeClass("dhide");
+				$(this).attr("rel", "checked");
+			}
+			if(rel == "checked") {
+				$(radio_before).removeClass("dhide");
+				$(radio_after).addClass("dhide");
+				$(this).attr("rel", "check");
+			}
+			event.stopPropagation();
+			totalmoney();
+		});
+		//三个联系人的列表
+		function threeuse() {
+			var openid = localStorage.getItem("openid");
+			var furl = "/PassengerInformationAPI/GetPassengerInformationList?WeChatID=" + openid;
+			$.ajax({
+				url: Serverurl + furl,
+				type: "get",
+				async: false,
+				dataType: "json",
+				success: function(result) {
+					var datas = result.resultdata;
+					var length = datas.length;
+					if(length > 0) {
+						for(var i = 0; i < length; i++) {
+							addthree(datas[i]);
+						}
+					}
+				}
+			});
+		}
+
+		function addthree(datas) {
+			var list = $(".conact_list");
+			var userName = datas.Name;
+			var mobile = datas.PhoneNumber;
+			var Fidcar = datas.IdNumber;
+			var PIID = datas.PIID;
+			var item = $(".cktemp .conact_item").clone();
+			item.find(".Fname").text(userName);
+			item.find(".dphone").text(mobile);
+			item.find(".Fidcar").text(Fidcar);
+			item.attr('PIID', PIID);
+			item.attr('mobile', mobile);
+			item.find(".use_edit").attr('onclick', "modifyuse(this)");
+			item.find(".choose_use").attr('onclick', "checkuse(this)");
+			list.append(item);
+		}
+		//选择联系人
+		function checkuse(dom) {
+			curuse = dom;
+			var check_before = $(dom).find(".check_before");
+			var check_after = $(dom).find(".check_after");
+			var rel = $(dom).attr("rel");
+			var checklength = $(".checkeduse").length;
+			if(rel == "check" && (ischeckseat == 0) && checklength <5) {
+				$(check_before).addClass("dhide");
+				$(check_after).removeClass("dhide");
+				$(dom).addClass("checkeduse");
+				$(dom).attr("rel", "checked");
+			}
+			if(rel == "check" && (checklength < seatlegth) && (ischeckseat == 1)) {
+				$(check_before).addClass("dhide");
+				$(check_after).removeClass("dhide");
+				$(dom).addClass("checkeduse");
+				$(dom).attr("rel", "checked");
+			}
+			if(rel == "checked") {
+				$(check_before).removeClass("dhide");
+				$(check_after).addClass("dhide");
+				$(dom).removeClass("checkeduse");
+				$(dom).attr("rel", "check");
+			}
+			event.stopPropagation();
+		}
+		//选择联系人确认按钮
+		$(".sure_add").click(function() {
+			$(".use_list").empty();
+			var list = $(".checkeduse");
+			var useinfor = eachuse(list);
+			var uselist = useinfor.uselist;
+			var length = uselist.length;
+			if(length > 0) {
+				if(stationBaseCode == 12) {
+					var html = template('passengerTmp', uselist);
+					$(".use_list").html(html);
+				} else {
+					for(var i = 0; i < length; i++) {
+						adduses(uselist[i]);
+					}
+				}
+			} else {
+				mui.toast('请选择乘客！');
+				event.stopPropagation();
+			}
+			totalmoney();
+
+		});
+
+		function adduses(datas) {
+			var list = $(".use_list");
+			var userName = datas.usename;
+			var seatmobile = datas.Fphone;
+			var Fidcar = datas.Fidcar;
+			var Fseatnum = datas.Fseatnum;
+			var item = $(".usetemp .use_item").clone();
+			item.find(".putname").text(userName);
+			item.find(".putidcar").text(Fidcar);
+			item.find(".seatNum").text(Fseatnum);
+			$(item).find(".contact_right").attr("seatmobile", seatmobile);
+			item.attr('Fidtype', "01");
+			$(item).attr("seatnum", Fseatnum);
+			item.find(".contact_right").attr('onclick', "showuses()");
+			item.find(".conact_delete").attr('onclick', "deletuse(this)");
+			list.append(item);
+		}
+
+		//已选联系人添加
+		function eachuse(doms) {
+			var datas = {};
+			var uselist = []; //前台用户列表
+			var totalMoney = 0;
+			if($(doms).length > 0) {
+				doms.each(function(i, item) {
+					var useitem = {};
+					var Fname = $(item).find(".Fname").text();
+					var Fidcar = $(item).find(".Fidcar").text();
+					var Fphone = $(item).parent().attr("mobile");
+					var Fseatnum = seatarry[i]
+					useitem.usename = Fname;
+					useitem.Fphone = Fphone;
+					useitem.Fidcar = Fidcar;
+					useitem.Fseatnum = Fseatnum;
+					uselist.push(useitem);
+
+				});
+
+			}
+			datas.uselist = uselist;
+			return datas;
+
+		}
+
+		//修改联系人
+		function modifyuse(dom) {
+			var modname = $(dom).siblings(".choose_use").find(".Fname").text();
+			var modidcar = $(dom).siblings(".choose_use").find(".Fidcar").text();
+			var modid = $(dom).parent().attr("piid");
+			var modmobile = $(dom).parent().attr("mobile");
+			var usedatas = {
+				modname: modname,
+				modidcar: modidcar,
+				modid: modid,
+				modmobile: modmobile
+			}
+			var moddatas = JSON.stringify(usedatas)
+			localStorage.setItem("moddatas", moddatas);
+			mui.openWindow({
+				url: '../modifyuse/modifyuse.html',
+				id: 'modifyuse',
+			});
+		}
+
+		//添加联系人
+		$(".goadduse").click(function() {
+			mui.openWindow({
+				url: '../adduse/adduse.html',
+				id: 'adduse',
+			});
+		});
+		//取消添加乘客
+		$(".exit_add").click(function() {
+			$(".adduse_page").addClass("dhide");
+		});
+
+		//列表取值
+		function eachlist(doms) {
+			var insurancecode = localStorage.getItem("insurancecode");
+			var datas = {};
+			var goods = [];
+			var safelist = [];
+			var nFphone = "";
+			var nFname = "";
+			var nFidcar = "";
+			var nFidtype = "";
+			//var nSeatMoney = "";
+			var nSeatNum = ""; //座位号
+			var fullTicketCount = 0;
+			var mm = 0;
+			var newobj = {};
+			if($(doms).length > 0) {
+				doms.each(function(i, item) {
+					var obj = {};
+					var safeitem = {};
+					var Fname = $(item).find(".putname").text();
+					var Fphone = $(item).find(".contact_right").attr("seatmobile");
+					var SeatNum = $(item).attr("seatnum");
+					//var SeatMoney = $(item).find(".SeatMoney").text();
+					var Fidcar = $(item).find(".putidcar").text();
+					var Fidtype = $(item).attr("Fidtype");
+					//mm = mm + parseFloat(SeatMoney);
+					obj.Fname = Fname;
+					obj.Fphone = Fphone;
+					obj.SeatNum = SeatNum;
+					obj.Fidcar = Fidcar;
+					obj.Fidtype = Fidtype;
+					nFphone = nFphone + Fphone + ",";
+					nFname = nFname + Fname + ",";
+					nFidcar = nFidcar + Fidcar + ",";
+					nFidtype = nFidtype + Fidtype + ",";
+					nSeatNum = nSeatNum + SeatNum + ",";
+					//testarry.push(SeatNum);
+					newobj.Fphone = nFphone;
+					newobj.Fname = nFname;
+					newobj.SeatNum = nSeatNum;
+					newobj.Fidcar = nFidcar;
+					newobj.Fidtype = nFidtype;
+					safeitem.seatNo = SeatNum;
+					safeitem.insurancePrice = safemoney.toString();
+					safeitem.insuranceOrderPrice = totalsafe.toString();
+					safeitem.insuranceCode = insurancecode;
+					goods.push(obj);
+					safelist.push(safeitem);
+				});
+
+			}
+			nFphone = nFphone.substring(0, nFphone.length - 1);
+			nFname = nFname.substring(0, nFname.length - 1);
+			nSeatNum = nSeatNum.substring(0, nSeatNum.length - 1);
+			nFidcar = nFidcar.substring(0, nFidcar.length - 1);
+			nFidtype = nFidtype.substring(0, nFidtype.length - 1);
+			datas.nFphone = nFphone;
+			datas.nFname = nFname;
+			datas.nSeatNum = nSeatNum;
+			datas.nFidcar = nFidcar;
+			datas.nFidtype = nFidtype;
+			datas.safelist = safelist;
+			return datas;
+
+		}
+
+		//支付数据提交
+		function payadata() {
+			var furl = "/YunSPOrderManage/YunSPOrderWX/YunSPMakeOrder";
+			var list = $(".use_list .use_item");
+			var startcode = localStorage.getItem("startcode");
+			var senddata = eachlist(list);
+			var insurancecode = localStorage.getItem("insurancecode");
+			var insureCompanyName = '新华保险';
+			console.log(senddata);
+			var passenName = senddata.nFname;
+			//var passengerIdType = senddata.nFidtype;
+			var passengerIdType = '01';
+			var passenIdcard = senddata.nFidcar;
+			var passenMobile = senddata.nFphone;
+			var xzZwh = senddata.nSeatNum;
+			var beginStationID = localStorage.getItem("startcode");
+			var beginStationName = localStorage.getItem("startstion");
+			var endStationID = localStorage.getItem("endcode");
+			var endStationName = localStorage.getItem("endstion");
+			var fcsj = localStorage.getItem("bustime");
+			var busDate = localStorage.getItem("usedate");
+			var busID = localStorage.getItem("classId");
+			var fullTicketPrice = localStorage.getItem("fullTicketPrice");
+			var halfTicketPrice = localStorage.getItem("halfTicketPrice");
+			var checkwindowNo = localStorage.getItem("checknum");
+			var openId = localStorage.getItem("openid");
+			var order_id = localStorage.getItem("order_id");
+			var fullTicketCount = $(".use_list .use_item").length;
+			var halfTicketCount = 0;
+			var childerCount = 0;
+			var insuranceNumber = $(".safenum").text();
+			var insuranceMoney = $(".fullsafe").text();
+			var spyGh = "wangshou";
+			var spyXm = "网售";
+			var userName = openId;
+
+			var getTickManMobile = $(".use_item").eq(0).find(".contact_right").attr('seatmobile');
+			var getTicketManIdCard = $(".use_list .use_item").eq(0).find(".putidcar").text();
+			var isInsurance = $(".checkticket").prop("checked");
+			if(isInsurance == true) {
+				isInsurance = 1;
+			}
+			if(isInsurance == false) {
+				isInsurance = 0;
+			}
+			if(insurancecode == 'ZTTPYBX'){
+				insureCompanyName = '太平洋保险';
+			}
+			var insuranceJson = senddata.safelist;
+			insuranceJson = JSON.stringify(insuranceJson);
+			var parm = {
+				passenName: passenName,
+				passengerIdType: passengerIdType,
+				passenIdcard: passenIdcard,
+				passenMobile: passenMobile,
+				xzZwh: xzZwh,
+				beginStationID: basecode,
+				beginStationName: beginStationName,
+				endStationID: endStationID,
+				endStationName: endStationName,
+				fcsj: fcsj,
+				busDate: busDate,
+				busID: busID,
+				fullTicketPrice: fullTicketPrice,
+				halfTicketPrice: halfTicketPrice,
+				checkwindowNo: checkwindowNo,
+				openId: openId,
+				fullTicketCount: fullTicketCount.toString(),
+				halfTicketCount: halfTicketCount.toString(),
+				childerCount: childerCount.toString(),
+				insuranceNumber: insuranceNumber.toString(),
+				insuranceMoney: insuranceMoney.toString(),
+				insuranceCode: insurancecode,
+				insureCompanyName: insureCompanyName,
+				spyGh: spyGh,
+				spyXm: spyXm,
+				userName: userName,
+				getTickManMobile: getTickManMobile,
+				getTicketManIdCard: getTicketManIdCard,
+				order_id: order_id,
+				router: router,
+			}
+			console.log(parm);
+			var postdata = JSON.stringify(parm);
+			console.log(parm);
+			var maindata = {
+				currentStationId: startcode,
+				currentModel: "webSaleTick",
+				currentOp: "makeOrder",
+				parmsOrDataJson: postdata
+//				isInsurance: isInsurance,
+//				insuranceJson: insuranceJson,
+			}
+			console.log(maindata);
+			$.ajax({
+				url: Serverurl + furl,
+				type: "POST",
+				async: false,
+				dataType: "json",
+				data: maindata,
+				timeout: 5000,
+				success: function(data) {
+					var msg = data.message;
+					var type = data.type;
+					if(type == 3) {
+						mui.toast(msg, '系统提示');
+						//getseatinfor(); 
+						//refresh();
+						return false;
+					}
+					var appId = data.resultdata.appId;
+					var timeStamp = data.resultdata.timeStamp;
+					var nonceStr = data.resultdata.nonceStr;
+					var package = data.resultdata.package;
+					var paySign = data.resultdata.paySign;
+					var signature = data.resultdata.signature;
+					var msg = data.message;
+					var type = data.type;
+					var code = data.resultdata.code;
+					var OrderCode = data.resultdata.orderId;
+					localStorage.setItem("OrderCode", OrderCode);
+					if(code == 200) {
+						WeixinJSBridge.invoke('getBrandWCPayRequest', {
+							"appId": appId, //公众号名称，由商户传入
+							"timeStamp": timeStamp, //时间戳
+							"nonceStr": nonceStr, //随机串
+							"package": package, //扩展包
+							"signType": "MD5", //微信签名方式:1.MD5
+							"paySign": paySign //微信签名
+						}, function(res) {
+							if(res.err_msg == "get_brand_wcpay_request:ok") {
+								mui.alert('支付成功！', '系统提示');
+								mui.openWindow({
+									url: '../ordersdetail/ordersdetail.html',
+									id: 'ordersdetail',
+								});
+							} else if(res.err_msg == "get_brand_wcpay_request:cancel") {
+								mui.openWindow({
+									url: '../ordersdetail/ordersdetail.html',
+									id: 'ordersdetail',
+								});
+							} else {
+								alert(JSON.stringify(res));
+							}
+							mui.openWindow({
+								url: '../ordersdetail/ordersdetail.html',
+								id: 'ordersdetail',
+							});
+							return;
+						});
+					}
+				}
+
+			});
+		}
+		//昆明起始站的支付数据提交
+		function payadata_km() {
+			var cursInfor = [];
+			var listDiv = $(".use_list .use_item");
+			listDiv.each(function(index, ele) {
+				var ticketType = {
+					id: 1,
+					name: '全票'
+				}
+				var curster = {
+					name: $(ele).find(".putname").html(),
+					phone: $(ele).find(".contact_right").attr("seatmobile"),
+					card: $(ele).find(".putidcar").html()
+				}
+				var passengerList = {
+					ticketType: ticketType, //票类
+					curster: curster, //乘客列表
+					isChild: false //是否带免费儿童
+				}
+				cursInfor.push(passengerList);
+			});
+			var parmsOrDataJson = {
+				lockTicket: {
+					classId: localStorage.getItem('classId'), //班次ID号
+					siteId: localStorage.getItem('endcode'), //到达站点ID号
+					lockTicketCount: $(".use_list .use_item").length, //同一订单下的乘客数量，张数1-5
+					lockMin: 5 //有效分钟数，5分钟后不操作就取消
+				},
+				bookTicket: {
+					bookerInfor: { //订票人信息
+						name: cursInfor[0].curster.name, //姓名
+						phone: cursInfor[0].curster.phone, //电话
+						cardType: 0, //证件类型
+						card: cursInfor[0].curster.card //证件号码
+					},
+					cursInfor: cursInfor,
+					lockMin: 6 //有效分钟数
+				},
+				openId: localStorage.getItem("openid")
+			};
+			parmsOrDataJson = JSON.stringify(parmsOrDataJson);
+			$(".load-wrapper").show();
+			$.get("" + Serverurl + "/YunSPOrderManage/YunSPOrderWX/NorthMakeOrder?parmsOrDataJson=" + parmsOrDataJson, {}, function(res) {
+				$(".load-wrapper").hide();
+				if(res.type == 1) {
+					var data = res.resultdata;
+					localStorage.setItem("OrderCode", data.orderId);
+					if(data.code == 200) {
+						WeixinJSBridge.invoke('getBrandWCPayRequest', {
+							"appId": data.appId, //公众号名称，由商户传入
+							"timeStamp": data.timeStamp, //时间戳
+							"nonceStr": data.nonceStr, //随机串
+							"package": data.package, //扩展包
+							"signType": "MD5", //微信签名方式:1.MD5
+							"paySign": data.paySign //微信签名
+						}, function(res) {
+							if(res.err_msg == "get_brand_wcpay_request:ok") {
+								mui.alert('支付成功！', '系统提示');
+								mui.openWindow({
+									url: '../ordersdetail/ordersdetail.html',
+									id: 'ordersdetail',
+								});
+							} else if(res.err_msg == "get_brand_wcpay_request:cancel") {
+								mui.openWindow({
+									url: '../ordersdetail/ordersdetail.html',
+									id: 'ordersdetail',
+								});
+							} else {
+								alert(JSON.stringify(res));
+							}
+							mui.openWindow({
+								url: '../ordersdetail/ordersdetail.html',
+								id: 'ordersdetail',
+							});
+							return;
+						});
+					}
+				} else {
+					mui.alert(res.message, '系统提示');
+				}
+			}, "json");
+		}
+		//支付按钮
+		$(".gotopay").click(function() {
+			var check = $(".use_list .use_item").length;
+			if(check <= 0) {
+				mui.toast('请添加乘客信息！');
+				return;
+			}
+			if(stationBaseCode == 12) {
+				payadata_km();
+			} else {
+				payadata();
+			}
+		});
+
+		//查看支付详情
+		$(".look_pay").click(function() {
+			var rel = $(this).attr("rel");
+			var dbfsign = $(this).find(".dbfsign");
+			if(rel == "up") {
+				$(".pay_detail").removeClass("dhide");
+				$(dbfsign).removeClass("fa-caret-down").addClass("fa-caret-up");
+				$(".look_pay").attr("rel", "down");
+			}
+			if(rel == "down") {
+				$(".pay_detail").addClass("dhide");
+				$(dbfsign).removeClass("fa-caret-up").addClass("fa-caret-down");
+				$(".look_pay").attr("rel", "up")
+			}
+		});
+		$(".pay_detail").click(function() {
+			$(this).addClass("dhide");
+			$(".look_pay").attr("rel", "up");
+			$(".look_pay").find(".dbfsign").removeClass("fa-caret-up").addClass("fa-caret-down");
+		})
+
+		//		//打开订单详情页
+		//		$(".gotopay").click(function() {
+		//			mui.openWindow({
+		//				url: '../orders/orders.html',
+		//				id: 'orders',
+		//			});
+		//		})
+
+		//查看保险详情
+		$(".dbsafe").click(function() {
+			var rel = $(this).attr("rel");
+			if(rel == "up") {
+				$(this).siblings(".install_list").slideDown();
+				$(this).attr("rel", "down");
+			}
+			if(rel == "down") {
+				$(this).siblings(".install_list").slideUp();
+				$(this).attr("rel", "up");
+			}
+
+		});
+		
+
+		//积分抵扣选择
+		$(".isinstall").click(function() {
+			var radio_before = $(this).find(".radio_before");
+			var radio_after = $(this).find(".radio_after");
+			var dbradio = $(this).attr("dbradio");
+			if(dbradio == "radiocheck") {
+				$(radio_before).addClass("dhide");
+				$(radio_after).removeClass("dhide");
+				$(this).attr("dbradio", "radiochecked");
+			}
+			if(dbradio == "radiochecked") {
+				$(radio_before).removeClass("dhide");
+				$(radio_after).addClass("dhide");
+				$(this).attr("dbradio", "radiocheck");
+			}
+		});
+
+		$(".gorule").click(function() {
+			mui.openWindow({
+				url: '../rule/rule.html',
+				id: 'rule',
+			});
+		});
+	</script>
+
+</html>

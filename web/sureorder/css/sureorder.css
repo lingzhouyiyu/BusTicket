@@ -1,0 +1,106 @@
+.mainbg{ background: #efeff4;}
+.mainpage{ padding-bottom: 3em;}
+.main_top{ padding: 0.4em; border-radius: 0.4em;}
+.index_topbar{ background: url(../../common/images/index_bg02.jpg) no-repeat; background-size: 100% 100%; padding: 1em 0 1em 0; border-radius: 0.4em;}
+
+.carinfor{ margin:0 0.4em; border-radius: 0.4em; background: #fff; padding: 0.4em 0.5em;}
+/*.adduse_btn{ background: #fff; margin:0.6em 0.4em 0 0.4em; height: 2em;}
+.add_img{ width: 1em; margin-right: 3px;}*/
+
+.conact_box{ margin:0.4em 0.4em 0 0.4em;  margin-bottom: 0.5em; background: #fff;   border-radius: 0.4em; overflow: hidden;}
+.use_item{background: #fff; padding: 0.5em 0.4em; border-top: 1px solid #efefef;}
+
+.dbcheck_box{margin:0 0.4em; border-radius: 0.4em; background: #fff; padding: 0.6em 0.4em; margin-bottom: 0.5em;}
+.adduse_btn{ height: 2.6em;}
+
+.item_top{background: #fff; border-radius: 0.4em; padding: 0.4em;}
+.conact_delete img{ width: 1.2em;}
+.contact_right{ width: 6em;}
+.sure_edit{ background: #00cc66; color: #fff; width: 3em; height: 1.5em; border-radius: 5px;}
+.item_bottom{ background: #fff; border-radius: 0.4em; margin-top: 1px; }
+.addr_bline{ border-bottom: 1px dashed rgba(255,102,0,0.48);}
+.addr_put{ padding: 0 0.6em; height: 2.5em; box-sizing:border-box;}
+
+.intall_box{padding: 0 0.5em; margin-bottom: 7px; }
+.install_main{ background: #fff; border: 1px solid #fff; border-radius: 0.4em;}
+.install_top{ padding-bottom: 0.4em; background: #fff;  padding: 0.5em 0.4em;}
+.install_list{ padding: 0 0.6em;  border-top: 1px solid #efeff4;}
+.install_radius{ border-bottom-left-radius: 0.4em; border-bottom-right-radius: 0.4em;}
+.install_item{background: #fff;  padding: 0em 0.5em;}
+.install_center{ padding: 0.6em 0;}
+.ticket_tl img.width09{ width: 0.9em;}
+.install_circle{ font-size: 0.6em; }
+.ticket_box{ padding: 0 0.5em 3.5em 0.5em;}
+.ticket_tl img{ width: 1.1em; margin-right: 0.6em;}
+.ticket_top{ background: #fff; border-radius: 0.4em; padding: 0.5em 0.6em; margin-bottom: 2px;}
+.ticket_botm{ background: #fff; border-radius: 0.4em; padding: 0.5em;}
+.sure_footer{ background: #fff; position: fixed; left: 0; bottom: 0; height: 2.8em; width: 100%; box-shadow: 0 -2px 3px #E1E1E1; z-index: 99;}
+.sfooter_right{ background: #FF6600; color: #fff;}
+.pay_detail{ position: fixed; width: 100%; background: rgba(0,0,0,0.6); height: 100%; left: 0; top: 0;}
+.detailmain{ background: #fff; position: absolute; left: 0; bottom: 2.9em; width: 100%; }
+.paydeail_item{ height: 2em; padding: 0 0.6em; font-size: 0.9em;}
+.paydeail_top{ background: #F5F5F5; height: 2.6em; margin-bottom: 0.4em; padding-left: 0.6em;}
+/*出发地选择*/
+.search_top{ background: #fff; position: fixed; left: 0; top: 0; width: 100%; overflow: hidden; z-index: 200; box-shadow: 0 3px 2px #cdcdcd;}
+.search_line{ height: 1em; width: 1px; background: #FF6600;}
+.search_clear{ width: 1.5em;}
+.uinput{ padding: 5px 10px;}
+.search_content{  padding-top: 3.2em; margin: 0 0.6em;}
+.content_stop{ padding: 0.5em;/* border-bottom: 1px solid #E1E1E1;*/ padding-bottom: 1em; background: #fff;}
+.addr_img01{ width: 1.2em; margin-right: 0.5em;}
+.addr_img02{ width: 1.1em;}
+.startlist li{ padding:0.4em 0.5em 0.4em 2em;  border-bottom: 1px solid #E6E6E6; background: #fff url(../../common/images/addrmark.png) no-repeat ; background-position: 8px 18px; }
+.startlist li div,.startlist02 li div { font-size: 0.85em; color: #969696;}
+.radio_img{ width: 1.1em; height: 1.1em;}
+.go_img img{ width:0.5em; margin-left: 0.8em;}
+
+.buyinfor{ padding: 1em 0.5em;}
+.adduse_page{position:fixed;top:0;left:0;z-index:999;overflow:auto;width:100%;height:100%;background:rgba(0,0,0,0.6);}
+.content_main{ background: #F5F5F5; position: absolute; left: 0; bottom: 0; height: 45%; width: 100%; overflow: auto; box-shadow: 0 -2px 3px #cdcdcd;}
+.content_top{ height: 2.8em; background: #fff; border-bottom: 1px solid #dcdcdc; position: fixed; left: 0; top: 55%; z-index: 99; width: 100%;}
+.add_img{ width: 1em;}
+.conact_list{ overflow: auto; height: auto; padding-bottom: 2.7em; padding-top: 2.8em;}
+.conact_item{ border-bottom: 1px solid #dcdcdc; padding: 0.4em 0.6em; background: #fff;}
+.check_img{ width: 1.2em; }
+.edit_img{ width: 1.2em;}
+.addsure_box{ position: fixed; left: 0; bottom: 0; width: 100%; }
+.adsure_btn{ background: #fff; height: 2.6em; box-shadow: 0 -2px 3px #cdcdcd;}
+.exit_add{ padding-left: 0.6em;}
+.sure_add{ padding-right: 0.6em;}
+.center_line{ width: 1.5em; height: 1px; background: #fff; margin: 0 5px;}
+.dbsure_btn{ background: #FF6600; color: #fff; border-radius: 5px; padding:5px 0.6em;}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+color: #ccc; font-size: 0.85em;
+} 
+input:-moz-placeholder, textarea:-moz-placeholder { 
+color: #ccc; font-size: 0.85em;
+} 
+input::-moz-placeholder, textarea::-moz-placeholder { 
+color: #ccc; font-size: 0.85em;
+} 
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+color: #ccc; font-size: 0.85em;
+} 
+
+
+/*页面切换*/
+.fix_box{position:fixed;top:0;left:0;z-index:99;overflow:auto;width:100%;height:100%;background:rgba(0,0,0,.5);}
+.bg_white{height:3em;background:#fff;}
+.dhide{display:none!important;}
+.pt-page-moveFromTop{-webkit-animation:moveFromTop .6s ease both;-moz-animation:moveFromTop .6s ease both;animation:moveFromTop .6s ease both;}
+.pt-page-moveToTop{-webkit-animation:moveToTop .6s ease both;-moz-animation:moveToTop .6s ease both;animation:moveToTop .6s ease both;}
+@-webkit-keyframes moveFromTop{from{-webkit-transform:translateY(-100%);}
+}
+@-moz-keyframes moveFromTop{from{-moz-transform:translateY(-100%);}
+}
+@keyframes moveFromTop{from{transform:translateY(-100%);}
+}
+@-webkit-keyframes moveToTop{to{-webkit-transform:translateY(-100%);}
+}
+@-moz-keyframes moveToTop{to{-moz-transform:translateY(-100%);}
+}
+@keyframes moveToTop{to{transform:translateY(-100%);}
+}
+.list_item{height:2.8em;color:#F0AD4E;text-decoration:none;}
+.switch_page{position:fixed;top:0;left:0;z-index:99;overflow:auto;width:100%;height:100%;background:#F5F5F5;}

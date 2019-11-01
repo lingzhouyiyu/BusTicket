@@ -1,0 +1,24 @@
+.mainbg{ background: #fff;}
+.mainpage{ padding-bottom: 3em;}
+.index_topbar{ margin: 0.4em; border-radius: 0.4em; background: url(../../common/images/index_bg02.jpg) no-repeat; background-size: 100% 100%; padding: 1em 0 1em 0; border-radius: 0.5em;}
+.carinfor{ margin:0 0.4em; border-radius: 0.4em; background: #fff; padding: 0.4em 0.5em;}
+.order_num{ background: #fff; margin: 0.6em 0.4em 2px 0.4em; padding: 0.5em; border-radius: 0.4em;}
+.ordernum_left img{ width: 1.3em;}
+
+.use-left img{ width: 1.6em;}
+.use_list{  padding: 0 0.4em 0 0.4em; margin-top: 0.6em;}
+.use_item{ background: #fff; border-radius: 0.4em; padding: 0.4em; margin-bottom: 2px;}
+.orders-top{ padding: 0.4em; margin-top:0.6em;}
+.order_numbox{ margin-top: 1em;}
+.orders_footer{ position: fixed; left: 0; bottom: 0; width: 100%; height: 2.8em; } 
+.person_list{ padding-bottom: 3.1em;}
+.time_delay{ background: #FFCC99; height: 2.2em;}
+.delay_img{ width: 1.35em; margin-right: 0.4em; }
+
+.check_img{ width: 0.9em;}
+
+.safebox{ background: #fff;margin: 0 0.4em; padding:0 0.5em; border-radius: 0.4em; height: 2.5em; margin-bottom: 1px;}
+.safe-left img{ width: 1.1em; margin-left: 4px;}
+.pagebox{ padding-bottom: 3.2em;}
+.footer_box{ padding: 1.5em; }
+.footer_btn{ height: 2.8em; border-radius: 0.4em; background: #FF6600; color: #fff;}

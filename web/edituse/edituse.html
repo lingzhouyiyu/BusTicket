@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title>修改用户</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/mui.min.css" />
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/idangerous.swiper.css" />
+		<link rel="stylesheet" href="../common/css/icon.css" />
+		<link rel="stylesheet" href="../common/css/ui-base.css" />
+		<link rel="stylesheet" href="../common/css/ui-box.css" />
+		<link rel="stylesheet" href="../common/css/ui-color.css" />
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="../common/css/control.css" />
+		<link rel="stylesheet" href="css/edituse.css" />
+	</head>
+
+	<body class="bc-text um-vp bc-bg">
+		<div class="ub ub-ac ub-pc add_top">
+			<div class="ub ub-ac">
+				<img class="ub ub-img" src="../common/images/add_img.png" />
+			</div>
+			<div class="ub ub-ac colgloden">
+				添加用户
+			</div>
+		</div>
+		<div class="ub ub-ver adduse_list">
+
+		</div>
+		<!--联系人模板-->
+		<div class="usetemp dhide">
+			<div class="ub ub-ver adduse_item">
+				<div class="ub additem_top colgloden">
+					<div class="ub ub-pc ub-ver additem_left">
+						<div class="ub umar-b Fname">
+
+						</div>
+						<div class="ub">
+							身份证号
+						</div>
+					</div>
+					<div class="ub ub-pc  ub-ver additem_right">
+						<div class="ub umar-b dphone">
+
+						</div>
+						<div class="ub Fidcar">
+
+						</div>
+					</div>
+				</div>
+				<div class="ub adduse_bottom">
+					<div class="ub ub-pc ub-ac ub-f1 ub-fh borderl deletuse">
+						<div class="ub ub-ac">
+							<img class="ub ub-img delete_img" src="../common/images/delete.png" />
+						</div>
+						<div class="ub ub-ac colgloden">
+							删除
+						</div>
+					</div>
+					<div class="ub ub-pc ub-ac ub-f1 ub-fh edit_use">
+						<div class="ub ub-ac">
+							<img class="ub ub-img edit_img" src="../common/images/edit_img.png" />
+						</div>
+						<div class="ub ub-ac colhgreen">
+							编辑
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../common/js/mui.min.js"></script>
+	<script type="text/javascript" src="../common/js/Fsuper.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var needRefresh03 = sessionStorage.getItem("need03-refresh");
+			var needRefresh04 = sessionStorage.getItem("need04-refresh");
+			if(needRefresh03) {
+				sessionStorage.removeItem("need03-refresh");
+				window.location.reload();
+			}
+			if(needRefresh04) {
+				sessionStorage.removeItem("need04-refresh");
+				window.location.reload();
+			}
+			iosrefresh();
+			getuses();
+
+		});
+		//三个联系人的列表
+		function getuses() {
+			var openid = localStorage.getItem("openid");
+			var furl = "/YunSPOrderManage/PassengerInformationAPI/GetPassengerInformationList?WeChatID=" + openid;
+			$.ajax({
+				url: Serverurl + furl,
+				type: "get",
+				async: false,
+				dataType: "json",
+				success: function(result) {
+					var datas = result.resultdata;
+					var length = datas.length;
+					if(length > 0) {
+						for(var i = 0; i < length; i++) {
+							adduses(datas[i]);
+						}
+					}
+				}
+			});
+		}
+
+		function adduses(datas) {
+			var list = $(".adduse_list");
+			var userName = datas.Name;
+			var mobile = datas.PhoneNumber;
+			var Fidcar = datas.IdNumber;
+			var PIID = datas.PIID;
+			var item = $(".usetemp .adduse_item").clone();
+			item.find(".Fname").text(userName);
+			item.find(".dphone").text(mobile);
+			item.find(".Fidcar").text(Fidcar);
+			item.attr('PIID', PIID);
+			item.find(".edit_use").attr('onclick', "modifyuse(this)");
+			item.find(".deletuse").attr('onclick', "deletuse(this)");
+			list.append(item);
+		}
+
+		//修改联系人
+		function modifyuse(dom) {
+			var modmobile = $(dom).parent().siblings(".additem_top").find(".dphone").text();
+			var modidcar = $(dom).parent().siblings(".additem_top").find(".Fidcar").text();
+			var modname = $(dom).parent().siblings(".additem_top").find(".Fname").text();
+			var modid = $(dom).parent().parent().attr("piid");
+			var usedatas = {
+				modname: modname,
+				modidcar: modidcar,
+				modid: modid,
+				modmobile: modmobile
+			}
+			var moddatas = JSON.stringify(usedatas)
+			localStorage.setItem("moddatas", moddatas);
+			mui.openWindow({
+				url: '../modifyuse/modifyuse.html',
+				id: 'modifyuse',
+			});
+		}
+		//删除乘客
+		function deletuse(dom) {
+			var PIID = $(dom).parent().parent().attr("PIID");
+			var furl = "/YunSPOrderManage/PassengerInformationAPI/DeletePassengerInformation?PIID=" + PIID;
+			var btnArray = ['否', '是'];
+			mui.confirm('是否确定删除乘客？', '系统提示', btnArray, function(e) {
+				if(e.index == 1) {
+					$.ajax({
+						url: Serverurl + furl,
+						type: "get",
+						async: false,
+						dataType: "json",
+						success: function(result) {
+							$(dom).parent().parent().remove();
+						}
+					});
+				} else {
+					return;
+				}
+			})
+		}
+
+		//打开增加联系人
+		$(".add_top").click(function() {
+			mui.openWindow({
+				url: '../adduse/adduse.html',
+				id: 'adduse',
+			});
+		});
+	</script>
+
+</html>

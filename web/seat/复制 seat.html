@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title>座位选择</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/mui.min.css" />
+		<link rel="stylesheet" href="../common/css/idangerous.swiper.css" />
+		<link rel="stylesheet" href="../common/css/icon.css" />
+		<link rel="stylesheet" href="../common/css/ui-base.css" />
+		<link rel="stylesheet" href="../common/css/ui-box.css" />
+		<link rel="stylesheet" href="../common/css/ui-color.css" />
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="../common/css/control.css" />
+		<link rel="stylesheet" href="css/seat.css" />
+	</head>
+
+	<body class="bc-text um-vp bc-white">
+		<!--头部背景选择框-->
+		<div class="mui-content mui-scroll-wrapper bc-white pullrefresh">
+			<div class="ub ub-ver">
+			<div class="ub ub-ver main_top ">
+				<div class="ub ub-ver index_topbar">
+					<div class="ub ft085 umar-t marl06 marr06 colwhite">
+						<div class="ub ub-ac ub-f1 ub-fh">
+							<span class="usedate">2017-01-01</span>
+						</div>
+						<div class="ub ub-ac ub-pe ub-f1 ub-fh">
+							<span class="usetime">00:00</span>发车
+						</div>
+					</div>
+					<div class="ub ub-ac colwhite marb06">
+						<div class="ub ub-pc ub-f1 sure_left ftb ft125 marl06">
+							<span class="startstation">昆明</span>
+						</div>
+						<div class="ub ub-ac ub-f1 ub-ver sure_center ft09">
+
+							<div class="ub">
+								<img src="../common/images/carimg02.png" />
+							</div>
+						</div>
+						<div class="ub ub-pc ub-f1 sure_left ftb ft125 marr06">
+							<span class="endstation">昭通</span>
+						</div>
+					</div>
+					<div class="ub ft085 umar-t marl06 marr06 colwhite">
+						<div class="ub ub-ac ub-f1 ub-fh">
+							<span class="startname"></span>汽车站
+						</div>
+						<div class="ub ub-ac ub-pe ub-f1 ub-fh">
+							<span class="endname"></span>汽车站
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ub seat_sign bc-text ft085">
+				<div class="ub ub-ac ub-pc ub-f1 ub-fh">
+					<div class="ub seattop_box01"></div>
+					<div class="ub">可选</div>
+				</div>
+				<div class="ub ub-ac ub-pc ub-f1 ub-fh">
+					<div class="ub seattop_box02"></div>
+					<div class="ub">已售</div>
+				</div>
+				<div class="ub ub-ac ub-pc ub-f1 ub-fh">
+					<div class="ub seattop_box03"></div>
+					<div class="ub">已选</div>
+				</div>
+				<div class="ub ub-ac ub-pc ub-f1 ub-fh">
+					<div class="ub seattop_box04"></div>
+					<div class="ub">预售</div>
+				</div>
+			</div>
+			<div class="ub ub-ac ub-pc seat_box">
+				<div class="seat-main seat-list">
+
+				</div>
+
+			</div>
+			<div class="ub seats_btn">
+				<div class="ub ub-f1 ub-ac ub-pc seat_sure" id="gopay">确定</div>
+			</div>
+		</div>
+		</div>
+		<!--座位模板-->
+		<div class="seattemp dhide">
+			<div class="seat-item ub-ac ub ub-pc dbseat colgloden">
+				<span class="seatmun">0</span><span class="seatstatus"></span>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../common/js/mui.min.js"></script>
+	<script type="text/javascript" src="../common/js/Fsuper.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			getseatinfor();
+		});
+
+		//下拉刷新具体业务实现
+		mui.init({
+			pullRefresh: {
+				container: '.pullrefresh',
+				down: {
+					callback: pulldownRefresh
+				}
+			}
+		});
+
+		function pulldownRefresh() {
+			setTimeout(function() {
+				$('.seat-list').empty();
+				getseatinfor();
+				mui('.pullrefresh').pullRefresh().endPulldownToRefresh();
+			}, 1500);
+		}
+		//获取座位信息
+		function getseatinfor() {
+			var furl = "/YunSPOrderManage/YunSPOrderWX/WebServicAction";
+			var startcode = localStorage.getItem("startcode");
+			var classId = localStorage.getItem("classId");
+			var usedate = localStorage.getItem("usedate");
+			var usetime = localStorage.getItem("usetime");
+			var startstion = localStorage.getItem("startstion");
+			var endstion = localStorage.getItem("endstion");
+			$(".usedate").text(usedate);
+			$(".usetime").text(usetime);
+			$(".startstation").text(startstion);
+			$(".endstation").text(endstion);
+			$(".startname").text(startstion);
+			$(".endname").text(endstion);
+			var senddata = {
+				sprq: usedate,
+				bcdm: classId,
+			}
+
+			var postdata = JSON.stringify(senddata);
+			var parm = {
+				currentStationId: startcode,
+				currentModel: "webSaleTick",
+				currentOp: "querySeat",
+				parmsOrDataJson: postdata
+
+			}
+			console.log(parm);
+			$.ajax({
+				url: Serverurl + furl,
+				type: "get",
+				async: false,
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var datas = result.data;
+					var length = datas.length;
+					if(length > 0) {
+						for(var i = 0; i < length; i++) {
+							addseat(datas[i]);
+						}
+					} else {
+						return;
+					}
+				}
+			});
+		}
+
+		function addseat(ruselt) {
+			var list = $(".seat-list");
+			var seatstatus = ruselt.zwzt;
+			var seatmun = ruselt.zwhm;
+			var carrychild = ruselt.isxietong;
+			var item = $(".seattemp .seat-item").clone();
+
+			if(seatstatus == 0) { //可选
+				item.addClass("kxbox");
+				item.find(".seatstatus").text("可选");
+				item.attr("onclick", "checkseat(this)");
+				item.attr("rel", "dbcheck");
+			}
+			if(seatstatus == 1) { //预留
+				item.addClass("ylbox");
+				item.find(".seatstatus").text("预留");
+			}
+			if(seatstatus == 2 || seatstatus == 7) { //已售，7为电话预定
+				item.addClass("ysbox");
+				item.find(".seatstatus").text("已售");
+			}
+			if(seatstatus == 9) { //锁定
+				item.addClass("ysbox");
+				item.find(".seatstatus").text("已售");
+			}
+			if(seatmun < 0) { //携童座
+				return;
+			}
+
+			item.find(".seatmun").text(seatmun);
+			item.attr("seatmun", seatmun);
+			item.attr("carrychild", carrychild);
+			list.append(item);
+		}
+
+		//座位点击
+		function checkseat(dom) {
+			var rel = $(dom).attr("rel");
+			var length = $(".yxbox").length;
+			
+
+			
+			if(rel == "dbcheck") {
+				if(length >= 5){
+				mui.toast('每个用户最多可以选择5个座位！');
+				return;
+			}
+				$(dom).addClass("yxbox");
+				$(dom).attr("rel", "dbchecked");
+			}
+			if(rel == "dbchecked") {
+				$(dom).removeClass("yxbox");
+				$(dom).attr("rel", "dbcheck");
+			}
+			
+		}
+		mui(".pullrefresh").on('tap', '.kxbox', function(event) {
+			this.click();
+		});
+
+		function eachlist(doms) {
+			var datas = {};
+			var uselist = []; //前台用户列表
+			if($(doms).length > 0) {
+				doms.each(function(i, item) {
+					var useitem = {};
+					var SeatNum = $(item).attr("seatmun");
+					useitem.SeatNum = SeatNum;
+					uselist.push(useitem);
+				});
+
+			}
+			datas.uselist = uselist;
+			return datas;
+
+		}
+
+		//打开增加修改联系人
+		mui(".pullrefresh").on('tap', '.seats_btn', function(event) {
+			var list = $(".yxbox");
+			var senddata = eachlist(list);
+			var sendinfor = JSON.stringify(senddata);
+			//console.log(senddata);
+			if($(".seat-item").hasClass("yxbox")) {
+				localStorage.setItem("sendinfor", sendinfor);
+				mui.openWindow({
+					url: '../sureorder/sureorder.html',
+					id: 'sureorder',
+				});
+			} else {
+				mui.alert('请选择座位', '系统提示');
+			}
+
+		});
+		//		$(".seats_btn").click(function() {
+		//			var list = $(".yxbox");
+		//			var senddata = eachlist(list);
+		//			var sendinfor = JSON.stringify(senddata);
+		//			//console.log(senddata);
+		//			if($(".seat-item").hasClass("yxbox")) {
+		//				localStorage.setItem("sendinfor", sendinfor);
+		//				mui.openWindow({
+		//					url: '../sureorder/sureorder.html',
+		//					id: 'sureorder',
+		//				});
+		//			} else {
+		//				mui.alert('请选择座位', '系统提示');
+		//			}
+		//
+		//		});
+	</script>
+
+</html>

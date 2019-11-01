@@ -1,0 +1,9 @@
+.adduse_top{/* background: url(../../common/images/index_bg02.jpg) no-repeat; background-size: cover;*/ padding: 1em 0.6em; /*box-shadow: 0 3px 2px #f79d72;*/}
+.adduse_putbox{ background:#fff; padding:0.3em 0.5em; border-radius: 5px; border: 1px solid #FF6600;}
+.adduse_left{ margin-right: 0.6em;}
+.adduse_left img{ width: 1em;}
+.adduse_left02 img{ width: 0.75em;}
+.uinput input{ padding: 0.6em 0; }
+.addput_item01{ border-bottom: 1px dashed #FF6600;}
+.surebtn_box{ padding: 4em 0.6em;}
+.sure_btn{ height: 2.6em; background: #FF6600; color: #fff; border-radius: 5px;}

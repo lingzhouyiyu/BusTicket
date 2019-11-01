@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title>修改用户</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/mui.min.css" />
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/idangerous.swiper.css" />
+		<link rel="stylesheet" href="../common/css/icon.css" />
+		<link rel="stylesheet" href="../common/css/ui-base.css" />
+		<link rel="stylesheet" href="../common/css/ui-box.css" />
+		<link rel="stylesheet" href="../common/css/ui-color.css" />
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="../common/css/control.css" />
+		<link rel="stylesheet" href="css/modifyuse.css" />
+	</head>
+
+	<body class="bc-text um-vp bc-bg">
+		<div class="ub ub-ver adduse_top modusemain">
+			<div class="ub adduse_putbox marb1">
+				<div class="ub ub-ac adduse_left">
+					<img class="ub ub-img" src="../common/images/stationline.png" />
+				</div>
+				<div class="ub ub-f1 ub-ver adduse_right">
+					<div class="ub ub-f1 uinput addput_item addput_item01">
+						<input type="text" value="" class="usenameput" />
+					</div>
+					<div class="ub uinput addput_item">
+						<input type="text" value="" class="useidcarput" />
+					</div>
+				</div>
+			</div>
+			<div class="ub adduse_putbox marb06">
+				<div class="ub ub-ac adduse_left adduse_left02">
+					<img class="ub ub-img" src="../common/images/ucircle.png" />
+				</div>
+				<div class="ub ub-f1 ub-ver adduse_right">
+					<div class="ub ub-f1 uinput addput_item">
+						<input type="tel" value="" class="usetelput" />
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="ub surebtn_box">
+			<div class="ub ub-ac ub-pc ub-f1 sure_btn">保存</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../common/js/mui.min.js"></script>
+	<script type="text/javascript" src="../common/js/Fsuper.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			getuseinfor();
+
+		});
+		sessionStorage.setItem("need04-refresh", true);
+		//加载修改乘客信息
+		function getuseinfor() {
+			var moddatas = localStorage.getItem("moddatas");
+			var changedata = JSON.parse(moddatas);
+			var modname = changedata.modname;
+			var modidcar = changedata.modidcar;
+			var modmobile = changedata.modmobile;
+			var modid = changedata.modid;
+			$(".usenameput").val(modname);
+			$(".useidcarput").val(modidcar);
+			$(".usetelput").val(modmobile);
+			$(".modusemain ").attr("PIID", modid);
+		}
+
+		//修改乘客的确认按钮
+
+		$(".sure_btn").on("click", function() {
+			var usenameput = $(".usenameput").val();
+			var usetelput = $(".usetelput").val();
+			var useidcarput = $(".useidcarput").val();
+			var regname = /^([\u4e00-\u9fa5]){2,7}$/;
+			var regtel = /^1\d{10}$/;
+			var regidcar = IdentityCodeValid(useidcarput);
+			if(usenameput == "") {
+				mui.alert('请选填写乘客姓名！', '系统提示');
+				event.stopPropagation();
+				return;
+			}
+			if(regname.test(usenameput) === false) {
+				mui.alert('请输入正确的姓名！', '系统提示');
+				event.stopPropagation();
+				return;
+			}
+			if(useidcarput == "") {
+				mui.alert('请填写乘客的身份证号码！', '系统提示');
+				event.stopPropagation();
+				return;
+			}
+			if(regidcar === false) {
+				mui.alert('请输入正确的身份证号码！', '系统提示');
+				event.stopPropagation();
+				return;
+			}
+			if(usetelput == "") {
+				mui.alert('请填写乘客电话！', '系统提示');
+				event.stopPropagation();
+				return;
+			}
+			if(regtel.test(usetelput) === false) {
+				mui.alert('请输入正确的电话号码！', '系统提示');
+				event.stopPropagation();
+				return;
+			}
+			var PIID = $(".modusemain").attr("PIID");
+			var WeChatID = localStorage.getItem("openid");
+			var PassengerType = "成人";
+			var IdType = "身份证";
+			var Sex = 0;
+			var furl = "/YunSPOrderManage/PassengerInformationAPI/UpdatePassengerInformation";
+			var pram = {
+				PIID: PIID,
+				WeChatID: WeChatID,
+				Name: usenameput,
+				Sex: Sex,
+				PhoneNumber: usetelput,
+				PassengerType: PassengerType,
+				IdType: IdType,
+				IdNumber: useidcarput,
+			}
+			$.ajax({
+				url: Serverurl + furl,
+				type: "post",
+				async: false,
+				dataType: "json",
+				data: pram,
+				success: function(result) {
+					var type = result.type;
+					if(type != 1) {
+						mui.alert('修改乘客信息失败，请重试！', '系统提示');
+						return;
+					}
+					if(type == 1) {
+						mui.alert('已成功修改乘客信息！', '系统提示');
+						history.back(-1);
+					}
+				}
+
+			});
+		});
+		
+		function IdentityCodeValid(code) {
+ 			var city = { 11: "北京", 12: "天津", 13: "河北", 14: "山西", 15: "内蒙古", 21: "辽宁", 22: "吉林", 23: "黑龙江 ", 31: "上海", 32: "江苏", 33: "浙江", 34: "安徽", 35: "福建", 36: "江西", 37: "山东", 41: "河南", 42: "湖北 ", 43: "湖南", 44: "广东", 45: "广西", 46: "海南", 50: "重庆", 51: "四川", 52: "贵州", 53: "云南", 54: "西藏 ", 61: "陕西", 62: "甘肃", 63: "青海", 64: "宁夏", 65: "新疆", 71: "台湾", 81: "香港", 82: "澳门", 91: "国外 " };
+			var pass = true;
+
+			if(!code || !/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(code)) {
+				//"身份证号格式错误";
+				pass = false;
+			} else if(!city[code.substr(0, 2)]) {
+				//"地址编码错误";
+				pass = false;
+			} else {
+				//18位身份证需要验证最后一位校验位
+				if(code.length == 18) {
+					code = code.split('');
+					//∑(ai×Wi)(mod 11)
+					//加权因子
+					var factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+					//校验位
+					var parity = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2];
+					var sum = 0;
+					var ai = 0;
+					var wi = 0;
+					for(var i = 0; i < 17; i++) {
+						ai = code[i];
+						wi = factor[i];
+						sum += ai * wi;
+					}
+					var last = parity[sum % 11];
+					if(parity[sum % 11] != code[17]) {
+						//"校验位错误";
+						pass = false;
+					}
+				}
+			}
+			return pass;
+
+		}
+	</script>
+
+</html>

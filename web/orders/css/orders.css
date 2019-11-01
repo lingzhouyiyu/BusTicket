@@ -1,0 +1,7 @@
+.mainbg{ background: #f6dfbd url(../../common/images/topbg01.png) no-repeat; background-size: 100%; background-attachment: fixed;}
+.index_topbar{ background: url(../../common/images/topbg01.png) no-repeat; background-size: 100% 100%; padding: 1em 0 4em 0;}
+.orders_list{ padding: 0.6em 0.4em 5em 0.4em;}
+.orders_item{ background: rgba(255,255,255,0.85);  border-radius: 8px; margin-bottom: 0.6em; padding: 0.5em; border:1px solid #efeff4; border-radius: 0.4em; box-shadow:2px 2px 5px #fab78b;}
+.car-img{ width: 1.2em;}
+
+

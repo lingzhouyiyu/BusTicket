@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title>订单中心</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/mui.min.css" />
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/idangerous.swiper.css" />
+		<link rel="stylesheet" href="../common/css/icon.css" />
+		<link rel="stylesheet" href="../common/css/ui-base.css" />
+		<link rel="stylesheet" href="../common/css/ui-box.css" />
+		<link rel="stylesheet" href="../common/css/ui-color.css" />
+		<link rel="stylesheet" href="../common/css/common.css?v=1" />
+		<link rel="stylesheet" href="../common/css/control.css" />
+		<link rel="stylesheet" href="css/orders.css" />
+	</head>
+
+	<body class="bc-text um-vp">
+		<div class="mui-content mui-scroll-wrapper pullrefresh">
+			<div class="ub ub-f1 ub-ver orders_list">
+
+			</div>
+			<div class="ub ub-ac ub-pc sc-text orderwarm dhide">
+				暂无订单信息！
+			</div>
+		</div>
+		<!--底部-->
+		<div class="ub  footer01">
+			<div class="ub ub-ac ub-pc ub-ver ub-f1 ub-fh" onclick="goindex()">
+				<div class="ub ub-ac ub-pc footer_box01">
+					<img class="ub ub-img footer_img" src="../common/images/home.png" />
+				</div>
+				<div class="ub sc-text ft085">首页</div>
+			</div>
+			<div class="ub ub-ac ub-pc ub-ver ub-f1 ub-fh" onclick="goorders()">
+				<div class="ub ub-ac ub-pc footer_box01">
+					<img class="ub ub-img footer_img" src="../common/images/orders-active.png" />
+				</div>
+				<div class="ub colgloden ft085">订单</div>
+			</div>
+			<div class="ub ub-ac ub-pc ub-ver ub-f1 ub-fh" onclick="goperson()">
+				<div class="ub ub-ac ub-pc footer_box01">
+					<img class="ub ub-img footer_img" src="../common/images/person.png" />
+				</div>
+				<div class="ub sc-text ft085 ">个人中心</div>
+			</div>
+		</div>
+		<!--订单列表模板-->
+		<div class="ordertemp dhide">
+			<div class="ub ub-ver orders_item orderitem">
+				<div class="ub ub-ac orders-top">
+					<div class="ub ub-f1">
+						<div class="ub ub-ac">
+							<img class="ub ub-img car-img" src="../common/images/carimg04.png" />
+						</div>
+						<div class="ub marl06 ft085 colgloden cartype">大型豪华快车</div>
+					</div>
+					<div class="ub ft085 colgloden">
+						<span class="usedate">2017-01-01</span>
+						<span class="usetime">00:00</span>
+					</div>
+				</div>
+				<div class="ub ub-ac orders-center umar-t umar-b">
+					<div class="ub ub-f1 ub-fh ub-ac ub-pc ft125 startstation">
+
+					</div>
+					<div class="ub ub-f1 ub-fh ub-ac ub-pc">
+						<img class="ub ub-img" src="../common/images/carimg03.png" />
+					</div>
+					<div class="ub ub-f1 ub-fh ub-ac ub-pc endstation ft125">
+
+					</div>
+				</div>
+				<div class="ub ub-ac orders-bottom">
+					<div class="ub ub-f1">
+						<div class="ub ub-ac dhide">
+							<img class="ub ub-img car-img" src="../common/images/conact01.png" />
+						</div>
+						<div class="ub colgloden">
+							￥<span class="ft125 Fmoney">0</span>
+						</div>
+					</div>
+					<div class="ub">
+						<span class="orderstatus ft125 colhgreen orderstatus">待支付</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../common/js/mui.min.js"></script>
+	<script type="text/javascript" src="../common/js/Fsuper.js?v=1"></script>
+	<script type="text/javascript">
+		$(function() {
+			var needRefresh02 = sessionStorage.getItem("need02-refresh");
+			if(needRefresh02) {
+				sessionStorage.removeItem("need02-refresh");
+				window.location.reload();
+			}
+			iosrefresh();
+
+			addorder();
+		});
+
+		//下拉刷新具体业务实现
+		mui.init({
+			pullRefresh: {
+				container: '.pullrefresh',
+				down: {
+					callback: pulldownRefresh
+				}
+			}
+		});
+
+		function pulldownRefresh() {
+			setTimeout(function() {
+				$('.orders_list').empty();
+				addorder();
+				mui('.pullrefresh').pullRefresh().endPulldownToRefresh();
+			}, 1500);
+		}
+		var openid = localStorage.getItem("openid");
+		//加载订单列表
+		function addorder() {
+			var openid = localStorage.getItem("openid");
+			//var openid = "okbpawzZI4t6n7DdmIYgiQ9Qx3ZA";
+			var furl = "/YunSPOrderManage/YunSPOrderWX/GetYunOrderList?openId=" + openid;
+			$.ajax({
+				url: Serverurl + furl,
+				type: "get",
+				async: false,
+				dataType: "json",
+				success: function(result) {
+					var datas = result;
+					var length = datas.length;
+					if(length > 0) {
+						for(var i = 0; i < length; i++) {
+							additem(datas[i]);
+						}
+					} else {
+						$(".orderwarm").removeClass("dhide");
+					}
+				}
+			});
+		}
+
+		function additem(data) {
+			var list = $(".orders_list");
+			var OrderStatus = data.OrderStatus;
+			var ClassCode = data.ClassCode;
+			var OrderCode = data.Id;
+			var EndStationName = data.SubOrder[0].EndStationName;
+			var StartStationName = data.SubOrder[0].StartStationName;
+			var IsTickets = data.IsTickets;
+			var CheckTicketStatus = data.CheckTicketStatus;
+			var OrderPrice = data.Amount;
+			var CreateDate = data.SubOrder[0].CreateDate;
+//			var insuranceOrderPrice = data.InsuranceOrderPrice;
+//			
+//			if(insuranceOrderPrice == null || insuranceOrderPrice ==""){
+//						insuranceOrderPrice = 0;
+//					}
+//			OrderPrice = OrderPrice + insuranceOrderPrice;
+			var data01 = data.UseDate;
+			var data02 = data.UseTime;
+			var endtime = data01 + " " + data02;
+			var ttd = new Date(endtime.replace("-", "/").replace("-", "/"));
+			var starttime = new Date(ttd);
+			var now = new Date();
+			var end = starttime;
+			var result = Math.floor(end - now) / 1000;
+			/// 订单状态 0=待支付,1=已支付,2已取消
+			if(OrderStatus === 0) { //待付款
+				var item = $(".ordertemp .orderitem").clone();
+				item.find(".orderstatus").text("待付款");
+				item.find(".orderstatus").removeClass("colhgreen").addClass("colred");
+			}
+			if(OrderStatus === 1) { //已支付
+				var item = $(".ordertemp .orderitem").clone();
+				item.find(".orderstatus").text("已支付");
+			}
+//			if(OrderStatus == 2) { //已退款
+//				var item = $(".ordertemp .orderitem").clone();
+//				item.find(".orderstatus").text("已退款");
+//			}
+			if(OrderStatus === 2) { //已取消
+				var item = $(".ordertemp .orderitem").clone();
+				item.find(".orderstatus").text("已取消");
+			}
+			if(OrderStatus === null || OrderStatus === '') { //异常订单
+				var item = $(".ordertemp .orderitem").clone();
+				item.find(".orderstatus").text("异常订单");
+			}
+
+			item.attr("id", OrderCode);
+			item.find(".startstation").text(StartStationName);
+			item.find(".endstation").text(EndStationName);
+			item.find(".usedate").text(CreateDate);
+			item.find(".usetime").text(data.UseTime);
+			item.find(".Fmoney").text(OrderPrice);
+			item.attr('IsTickets', IsTickets);
+			item.attr('OrderCode', OrderCode);
+			item.attr('ClassCode', ClassCode);
+			item.attr('onclick', "orderDetail(this)");
+			list.append(item);
+		}
+		//绑定tap事件
+		mui(".pullrefresh").on('tap', '.orderitem', function(event) {
+			this.click();
+		});
+
+		//打开订单详情页
+		function orderDetail(dom) {
+			var OrderCode = $(dom).attr("OrderCode");
+			localStorage.setItem("OrderCode", OrderCode);
+			mui.openWindow({
+				url: '../ordersdetail/ordersdetail.html?v=1.0',
+				id: 'ordersdetail',
+			});
+		}
+
+		
+	</script>
+
+</html>

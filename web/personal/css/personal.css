@@ -1,0 +1,14 @@
+.personal_top{ background: #fff; padding: 1.5em 0.6em;}
+.personal_head{ margin-right: 1em;}
+.personal_head img{ width: 5em; height: 5em; border-radius: 50%; border: 1px solid #fff; }
+.person_sign img{ width: 1.8em;}
+.sub_img{ width: 1.8em;}
+.head_banner{ background: #fff; border-top: 1px solid #efefef;  margin-bottom: 0.6em; padding: 0.5em 0;}
+.subcenter{ margin: 3px 0;}
+.find_item{ background: #fff; padding: 0em 1em; height: 2.8em; border-bottom: 1px solid #efefef; color: #323232;}
+.find_leftImg{ width: 2.6em;  }
+.find_leftImg img{width: 1.4em; }
+.find_rightImg img{ width: 0.45em;}
+.find_leftImg .width12{ width: 1.5em;}
+.find_list{ padding-bottom: 4.6em; margin-top: 0.5em;}
+

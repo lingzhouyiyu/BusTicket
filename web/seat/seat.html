@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title>座位选择</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/mui.min.css" />
+		<link rel="stylesheet" href="../common/css/idangerous.swiper.css" />
+		<link rel="stylesheet" href="../common/css/icon.css" />
+		<link rel="stylesheet" href="../common/css/ui-base.css" />
+		<link rel="stylesheet" href="../common/css/ui-box.css" />
+		<link rel="stylesheet" href="../common/css/ui-color.css" />
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="../common/css/control.css" />
+		<link rel="stylesheet" href="css/seat.css" />
+	</head>
+
+	<body class="bc-text um-vp bc-white">
+		<!--头部背景选择框-->
+		<div class="ub ub-ver main_top ">
+			<div class="ub ub-ver index_topbar">
+				<div class="ub ft085 umar-t marl06 marr06 colwhite">
+					<div class="ub ub-ac ub-f1 ub-fh">
+						<span class="usedate">2017-01-01</span>
+					</div>
+					<div class="ub ub-ac ub-pe ub-f1 ub-fh">
+						<span class="usetime">00:00</span>发车
+					</div>
+				</div>
+				<div class="ub ub-ac colwhite marb06">
+					<div class="ub ub-pc ub-f1 sure_left ftb ft125 marl06">
+						<span class="startstation">昆明</span>
+					</div>
+					<div class="ub ub-ac ub-f1 ub-ver sure_center ft09">
+
+						<div class="ub">
+							<img src="../common/images/carimg02.png" />
+						</div>
+					</div>
+					<div class="ub ub-pc ub-f1 sure_left ftb ft125 marr06">
+						<span class="endstation">昭通</span>
+					</div>
+				</div>
+				<div class="ub ft085 umar-t marl06 marr06 colwhite">
+					<div class="ub ub-ac ub-f1 ub-fh">
+						<span>线路：</span>
+						<span class="startname"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ub seat_sign bc-text ft085">
+			<div class="ub ub-ac ub-pc ub-f1 ub-fh">
+				<div class="ub seattop_box01"></div>
+				<div class="ub">可选</div>
+			</div>
+			<div class="ub ub-ac ub-pc ub-f1 ub-fh">
+				<div class="ub seattop_box02"></div>
+				<div class="ub">已售</div>
+			</div>
+			<div class="ub ub-ac ub-pc ub-f1 ub-fh">
+				<div class="ub seattop_box03"></div>
+				<div class="ub">已选</div>
+			</div>
+			<div class="ub ub-ac ub-pc ub-f1 ub-fh dhide">
+				<div class="ub seattop_box04"></div>
+				<div class="ub">预售</div>
+			</div>
+		</div>
+		<div class="ub ub-ac ub-pc seat_box">
+			<div class="ub seatlist">
+
+			</div>
+		</div>
+		<div class="ub seats_btn">
+			<div class="ub ub-f1 ub-ac ub-pc seat_sure" id="gopay">确定</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../common/js/mui.min.js"></script>
+	<script type="text/javascript" src="../common/js/Fsuper.js?v=1.5"></script>
+	<script type="text/javascript">
+		$(function() {
+			getstae();
+			getseatinfor();
+			drawseat();
+			seatinfor();
+		});
+
+		var startcode = localStorage.getItem("startcode");
+		var endcode = localStorage.getItem("endcode");
+		var classId = localStorage.getItem("classId");
+		var usedate = localStorage.getItem("usedate");
+		var usetime = localStorage.getItem("usetime");
+		var startstion = localStorage.getItem("startstion");
+		var endstion = localStorage.getItem("endstion");
+		var stationline = localStorage.getItem("stationline");
+		var State, AppId, AppSecret, PayOpenId;
+		var posttime = 0;
+		var curseatnum = 0;
+		var cursetstatus = 0;
+		var order_id = "";
+
+		function getstae() {
+			var openid = localStorage.getItem("openid");
+			var furl = "/YunSPOrderManage/AboutClassAPI/GetPublicSignInfoJson?publicSignKey=Zj&openid=" + openid;
+			$.ajax({
+				url: Serverurl + furl,
+				type: "get",
+				async: false,
+				dataType: "json",
+				success: function(result) {
+					if(result.resultdata == null || result.resultdata == "") {
+						posttime++;
+						if(posttime <= 3) {
+							getstae();
+							return;
+						} else {
+							PayOpenId = null;
+							return;
+						}
+					}
+					State = result.resultdata.State;
+					AppId = result.resultdata.AppId;
+					AppSecret = result.resultdata.AppSecret;
+					PayOpenId = result.resultdata.PayOpenId;
+				}
+			});
+
+		}
+		var floornum = 1;
+		var SeatInfo;
+		var rownum = 0;
+		var colnum = 0;
+
+		function getseatinfor() {
+			$(".usedate").text(usedate);
+			$(".usetime").text(usetime);
+			$(".startstation").text(startstion);
+			$(".endstation").text(endstion);
+			$(".startname").text(stationline);
+			$(".endname").text(endstion);
+			var furl = "/YunSPOrderManage/YunSPOrderWX/WebServicAction";
+
+			var senddata = {
+				UseDate: usedate,
+				ClassNo: classId,
+				SiteCode: endcode
+			}
+
+			var postdata = JSON.stringify(senddata);
+			var parm = {
+				currentStationId: startcode,
+				currentModel: "webSaleTick",
+				currentOp: "querySeatLayout",
+				parmsOrDataJson: postdata
+
+			}
+			//console.log(parm);
+			$.ajax({
+				url: Serverurl + furl,
+				type: "post",
+				async: false,
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var resultdatas = result;
+					if(result.jieguo == "true") {
+						SeatInfo = result.data;
+						rownum = SeatInfo[0].rows;
+						colnum = SeatInfo[0].cols;
+						floornum = SeatInfo[0].layers;
+						//console.log(SeatInfo);
+					} else {
+						return;
+					}
+				}
+			});
+
+		}
+
+		function drawseat() {
+			var seatX = 0;
+			var seatY = 0;
+			var seatid = 0;
+			var curid = 0;
+			var floorflag = "";
+			var dvalx = 0;
+			var lastseatx = 0;
+			var sth = '<div class="ub ub-ver ub-f1 seatbox">';
+			if(floornum == 1) {
+				for(var i = 1; i <= rownum; i++) {
+					seatX = i;
+
+					sth += '<div class="ub ub-ac ub-pc seat_row"><div class="ub ub-ac ub-pc seattag">' + seatX + '排</div>';
+					for(var j = 1; j <= colnum; j++) {
+						seatY = j;
+						seatid = seatX + "_" + seatY;
+						sth += '<div class="ub ub-ac ub-pc seat_col seatitem"' + 'rel=dbcheck></div>';
+					}
+
+					sth += "</div>";
+				}
+			}
+			if(floornum == 2) {
+				for(var i = 1; i <= rownum; i++) {
+					seatX = i;
+					if(seatX % 2 == 1) {
+						lastseatx = i - dvalx;
+						floorflag = "下";
+						dvalx++;
+					}
+					if(seatX % 2 == 0) {
+						floorflag = "上";
+						lastseatx = i / 2;
+					}
+
+					sth += '<div class="ub ub-ac ub-pc seat_row"><div class="ub ub-ac ub-pc seattag">' + lastseatx + '排' + floorflag + '</div>';
+					for(var j = 1; j <= colnum; j++) {
+						seatY = j;
+						seatid = seatX + "_" + seatY;
+						sth += '<div class="ub ub-ac ub-pc seat_col seatitem"' + 'rel=dbcheck></div>';
+					}
+
+					sth += "</div>";
+				}
+			}
+
+			$('.seatlist').html(sth + "</div>");
+		}
+
+		function seatinfor() {
+			var length = SeatInfo.length;
+			if(length > 0) {
+				for(var i = 0; i < length; i++) {
+					addseat(SeatInfo[i]);
+				}
+			}
+		}
+
+		//加载座位信息
+		function addseat(datas) {
+			var seatcode = datas.coordinate;
+			var seatstatus = datas.zwzt;
+			var SeatMoney = parseInt(datas.pj);
+			var seatNo = datas.areaname;
+			seatcode = seatcode.split(",");
+			for(var i = 0; i < seatcode.length; i++) {
+				curX = seatcode[0];
+				curY = seatcode[1];
+				curfloor = seatcode[2];
+			}
+			
+			//console.log(curX,curY,curfloor);
+
+			var lastseatx = 0;
+			if(floornum == 1) {
+				var domseat = $(".seat_row").eq(curX - 1).children(".seatitem").eq(curY - 1);
+				domseat.attr("SeatMoney", SeatMoney);
+				domseat.attr("seatmun", seatNo);
+				domseat.text(seatNo);
+				
+				if(seatstatus == 0) { //0可买
+					domseat.addClass("kxbox");
+					domseat.attr("onclick", "checkseat(this)");
+				}
+				if(seatstatus == 2 || seatstatus == 9 || seatstatus == 7) { //2已售，9已锁
+					domseat.addClass("bkxbox");
+				}
+				if(seatstatus == "") { //司机位，不可选
+					domseat.removeClass("kxbox");
+					domseat.css("color", "#fff");
+					domseat.removeAttr('onclick');
+				}
+				
+			}
+			if(floornum == 2) {
+				if(curfloor == 1) {
+					lastseatx = parseInt(curX) * 2 - 1;
+					var domseat = $(".seat_row").eq(lastseatx - 1).children(".seatitem").eq(curY - 1);
+					domseat.attr("SeatMoney", SeatMoney);
+					domseat.attr("seatmun", seatNo);
+					domseat.text(seatNo);
+					if(seatstatus == 0) { //0可买
+						domseat.addClass("kxbox");
+						domseat.attr("onclick", "checkseat(this)");
+					}
+					if(seatstatus == 2 || seatstatus == 9 || seatstatus == 7) { //2已售，9已锁
+						domseat.addClass("bkxbox");
+					}
+					if(seatstatus == "") { //司机位，不可选
+						domseat.removeClass("kxbox");
+						domseat.css("color", "#fff");
+						domseat.removeAttr('onclick');
+					}
+				}
+				if(curfloor == 2) {
+					lastseatx = parseInt(curX) * 2;
+					var domseat = $(".seat_row").eq(lastseatx - 1).children(".seatitem").eq(curY - 1);
+					domseat.attr("SeatMoney", SeatMoney);
+					domseat.attr("seatmun", seatNo);
+					domseat.text(seatNo);
+					if(seatstatus == 0) { //0可买
+						domseat.addClass("kxbox");
+						domseat.attr("onclick", "checkseat(this)");
+					}
+					if(seatstatus == 2 || seatstatus == 9 || seatstatus == 7) { //2已售，9已锁
+						domseat.addClass("bkxbox");
+					}
+					if(seatstatus == "") { //司机位，不可选
+						domseat.removeClass("kxbox");
+						domseat.css("color", "#fff");
+						domseat.removeAttr('onclick');
+					}
+				}
+			}
+		}
+
+		//座位点击
+		function checkseat(dom) {
+			getseatinfor();
+			seatinfor();
+			var rel = $(dom).attr("rel");
+			var length = $(".yxbox").length;
+			curseatnum = $(dom).attr("seatmun");
+			if(rel == "dbcheck") {
+				if(length >= 5) {
+					mui.toast('每个用户最多可以选择5个座位！');
+					return;
+				}
+				$(dom).removeClass("kxbox").addClass("yxbox");
+				$(dom).attr("rel", "dbchecked");
+				cursetstatus = 9;
+				//clockseat();
+			}
+			if(rel == "dbchecked") {
+				$(dom).addClass("kxbox").removeClass("yxbox");
+				$(dom).attr("rel", "dbcheck");
+				cursetstatus = 0;
+				//clockseat();
+			}
+
+		}
+
+		function eachlist(doms) {
+			var datas = {};
+			var uselist = []; //前台用户列表
+			var nSeatNum = ""; //座位号
+			if($(doms).length > 0) {
+				doms.each(function(i, item) {
+					var useitem = {};
+					var obj = {};
+					var SeatNum = $(item).attr("seatmun");
+					obj.SeatNum = SeatNum;
+					useitem.SeatNum = SeatNum;
+					nSeatNum = nSeatNum + SeatNum + ",";
+					uselist.push(useitem);
+				});
+
+			}
+			datas.uselist = uselist;
+			nSeatNum = nSeatNum.substring(0, nSeatNum.length - 1);
+			datas.nSeatNum = nSeatNum;
+			return datas;
+
+		}
+
+		var nSeatNum;
+		$(".seats_btn").click(function() {
+			var list = $(".yxbox");
+			var senddata = eachlist(list);
+			nSeatNum = senddata.nSeatNum;
+			var sendinfor = JSON.stringify(senddata);
+			localStorage.setItem("sendinfor", sendinfor);
+
+			console.log(sendinfor);
+
+			if($(".yxbox").length < 0) {
+				mui.toast('请选择座位', '系统提示');
+			} else {
+				clockseat();
+			}
+
+		});
+
+		//锁座
+		function clockseat() {
+			var furl = "/YunSPOrderManage/YunSPOrderWX/WebServicAction";
+			var senddata = {
+				beginStationID: startcode,
+				beginStationName: startstion,
+				busDate: usedate,
+				busID: classId,
+				xzZwh: nSeatNum,
+				pzdm: "01",
+				order_id: order_id,
+				zwzt: cursetstatus,
+				username: "wangshou",
+				centerNumber: ""
+			}
+			var postdata = JSON.stringify(senddata);
+			var parm = {
+				currentStationId: startcode,
+				currentModel: "webSaleTick",
+				currentOp: "newlockZwh",
+				parmsOrDataJson: postdata
+
+			}
+			$.ajax({
+				url: Serverurl + furl,
+				type: "post",
+				async: false,
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var type = result.jieguo;
+					var rtn = result.rtn;
+					var msg = result.msg;
+					order_id = result.OrderId;
+					if(type == false || rtn != 0) {
+						mui.toast("锁座失败,请稍后重试！");
+						getseatinfor();
+						seatinfor();
+					}
+					if(type == "true" && rtn == "0") {
+						localStorage.setItem("order_id", order_id);
+						//console.log(order_id);
+
+										mui.openWindow({
+											url: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + AppId + '&redirect_uri=https%3A%2F%2Fwechat.laiyunyou.cn%2FWapWX%2Fweb%2Fsureorder%2Fsureorder.html&response_type=code&scope=snsapi_base&state=' + State + '#wechat_redirect&AppSecret=' + AppSecret,
+											id: 'sureorder',
+										});
+
+//						mui.openWindow({
+//							url: '../sureorder/sureorder.html',
+//							id: 'sureorder',
+//						});
+					}
+				}
+			});
+		}
+	</script>
+
+</html>

@@ -1,0 +1,110 @@
+.carlist_main{ padding: 3.3em 0 1.5em 0;  }
+.warming{ padding-top: 1em; font-size: 0.9em;}
+.warmline{ width: 1.5em; height: 1px; background: #BABABA;}
+.car_item{ background: #fff; margin: 0 0.4em 0.7em 0.4em; padding: 0.6em 0.5em; border:1px solid #efeff4; border-radius: 0.4em; box-shadow:2px 2px 5px #fab78b;}
+.carimg{ width: 3.4em; margin: 0 5px;}
+.caritem_left{ width: 5em;}
+.caritem_right{ width: 4em;}
+.dhide { display:none !important;}
+.active_bg{ background:#ff7010 !important; color:#fff;}
+.time_left{ padding:0 0.4em;}
+.time_left img{ width:0.5em;}
+.cander_top{ height:2.8em; background:#f2f5f7; padding:0 0.5em;}
+.closeback{ width:2.5em;}
+.closeback img{ width:1.2em}
+.choosetime{ background:#fff; color:#ff7010;height:1.85em; padding:0 0.4em; border-radius:4px; overflow:hidden; font-size: 0.9em;}
+.choosetime img{ width:1em;}
+.listfixtop{ position:fixed; left:0; top:0; width:100%; padding: 0.4em 0; background:#ff7010; z-index:9; }
+.listfixtop_main{ padding:0 0.4em;}
+.font085{ font-size:0.85em;}
+.fontb{ font-weight:bold;}
+.mar3px{ margin-right:3px;}
+
+/**下拉刷新**/
+.pullrefresh{}
+.mui-pull-top-pocket{ top: 2em;}
+/*日期*/
+
+.cheng{color:#ff7010;}
+.cander_box li{float:left;width:14.2%;height:2.8em;text-align:center;}
+.week_top{position:fixed;top:0;left:0;z-index:99;width:100%;height:2.2em;background:#cf4101;color:#fff;}
+.datelist01{padding-top:2.2em;}
+.datewarming{ padding: 0.6em 0.4em;}
+.cander_top{height:2em;background:#f2f5f7;font-size:1.125em;}
+.ash{color:rgba(0,0,0,.3);}
+.chenBJ{background:#e7e7e7;}
+.data_active{background:#FF6600;color:#FFF;}
+.data_item{width:2.5em;height:2.5em;border-radius:5px;}
+
+.dhide{display:none !important;}
+.pt-page-moveFromTop{-webkit-animation:moveFromTop .6s ease both;-moz-animation:moveFromTop .6s ease both;animation:moveFromTop .6s ease both;}
+.pt-page-moveToTop{-webkit-animation:moveToTop .6s ease both;-moz-animation:moveToTop .6s ease both;animation:moveToTop .6s ease both;}
+.switch_page{position:fixed;top:0;left:0;z-index:99;overflow:auto;width:100%;height:100%;background:#F5F5F5;}
+
+@keyframes rotleft{
+	0%{ transform: rotate(0deg);}
+	100%{transform: rotate(180deg)}
+}
+@-webkit-keyframes rotleft{
+	0%{ -webkit-transform: rotate(0deg);}
+	100%{-webkit-transform: rotate(180deg)}
+}
+@-moz-keyframes rotleft{
+	0%{ -moz-transform: rotate(0deg);}
+	100%{-moz-transform: rotate(180deg)}
+}
+
+
+@keyframes rotright{
+	0%{ transform: rotate(0deg);}
+	100%{transform: rotate(-180deg)}
+}
+@-webkit-keyframes rotright{
+	0%{ -webkit-transform: rotate(0deg);}
+	100%{-webkit-transform: rotate(-180deg)}
+}
+@-moz-keyframes rotright{
+	0%{ -moz-transform: rotate(0deg);}
+	100%{-moz-transform: rotate(-180deg)}
+}
+
+
+@keyframes slideleft{
+	0%{ left: 0;}
+	100%{opacity: 0; left: 100%;}
+}
+@-webkit-keyframes slideleft{
+	0%{  left: 0;}
+	100%{opacity: 0; left: 100%;}
+}
+@-moz-keyframes slideleft{
+	0%{  left: 0;}
+	100%{opacity: 0; left: 100%;}
+}
+
+@keyframes slideright{
+	0%{ right: 0;}
+	100%{opacity: 0; right: 100%;}
+}
+@-webkit-keyframes slideright{
+	0%{  right: 0;}
+	100%{opacity: 0; right: 100%;}
+}
+@-moz-keyframes slideright{
+	0%{  right: 0;}
+	100%{opacity: 0; right: 100%;}
+}
+
+/*页面切换动画*/
+@-webkit-keyframes moveFromTop{from{-webkit-transform:translateY(-100%);}
+}
+@-moz-keyframes moveFromTop{from{-moz-transform:translateY(-100%);}
+}
+@keyframes moveFromTop{from{transform:translateY(-100%);}
+}
+@-webkit-keyframes moveToTop{to{-webkit-transform:translateY(-100%);}
+}
+@-moz-keyframes moveToTop{to{-moz-transform:translateY(-100%);}
+}
+@keyframes moveToTop{to{transform:translateY(-100%);}
+}

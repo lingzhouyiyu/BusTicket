@@ -1,0 +1,28 @@
+/**suggest**/
+.suggest_box{padding:1em}
+.check_item img{width:1em;margin-right:.4em}
+.contitem{ margin-bottom: 1.5em;}
+.radio_img{ width: 1.1em;}
+.install_left{ margin-left: 0.6em;}
+.contleft{ width: 5.4em;}
+.marb1{margin-bottom:1em}
+.suggest{padding-top:1em}
+.suggest-title{ margin-bottom: 0.5em; padding-left: 1em;}
+.dbtelbox{ padding: 1em; font-size: 0.9em;}
+.suggest_in{padding:.6em}
+.cont{padding-left:.5em;padding-right:.5em;border-radius:8px;border:1px solid #ccc;}
+.suggestbtn{margin-top:2em;background:#ff6600; background-size: 100% 100%; height:2.6em;margin-left:1em;margin-right:1em;color:#fff;font-weight:600;border-radius:.3em;margin-bottom:3em;border-radius:8px}
+.txtput{margin-left:1em;margin-right:1em;height:6em;padding:.6em;border-radius:8px;border:1px solid #ccc}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+color: #969696; 
+} 
+input:-moz-placeholder, textarea:-moz-placeholder { 
+color: #969696; 
+} 
+input::-moz-placeholder, textarea::-moz-placeholder { 
+color: #969696; 
+} 
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+color: #969696; 
+} 

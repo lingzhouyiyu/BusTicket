@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title>车次选择</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/mui.min.css" />
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/icon.css" />
+		<link rel="stylesheet" href="../common/css/ui-base.css" />
+		<link rel="stylesheet" href="../common/css/ui-box.css" />
+		<link rel="stylesheet" href="../common/css/ui-color.css" />
+		<link rel="stylesheet" href="../common/css/common.css?v=1" />
+		<link rel="stylesheet" href="../common/css/control.css" />
+		<link rel="stylesheet" href="css/carlist.css" />
+	</head>
+
+	<body class="bc-text um-vp bc-bg">
+		<div class="page01" id="mainpage">
+			<div class="ub ub-ver">
+				<div class="ub ub-ver listfixtop">
+					<div class="ub sub_nav active_bg">
+						<div class="ub ub-ac time_left" id="backleft">
+							<div class="ub ub-ac ub-img mar3px">
+								<img src="../common/images/up_left.png" />
+							</div>
+							<div>
+								前一天
+							</div>
+						</div>
+						<a href="#starttimepage" class="ub ub-f1 ub-ac ub-pc pagebox" id="starttime">
+							<div class="ub  ub-pc ub-ac choosetime">
+								<span class="ub ub-ac searchtime timetxt" id="time">2017-08-9</span>
+								<span class="umar-l umar-r ub ub-ac dbweek">星期一</span>
+								<img class="ub ub-ac" src="../common/images/dateclick.png" />
+							</div>
+						</a>
+						<div class="ub ub-ac time_left" id="backright">
+							<div class="ub ub-ac mar3px">后一天</div>
+							<div class="ub ub-ac ub-img ">
+								<img src="../common/images/up_right.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="mui-content mui-scroll-wrapper pullrefresh">
+			<div class="ub ub-ver carlist_main">
+				<div class="ub ub-ver ub-f1 car_list">
+
+				</div>
+				<div class="ub ub-ac ub-pc sc-text warming">
+					<span class="ub warmline"></span>
+					<span class="ub">暂无更多车次信息</span>
+					<span class="ub warmline"></span>
+				</div>
+			</div>
+		</div>
+
+		<!--选择出发时间页面-->
+		<div class="ub ub-ver switch_page dhide" id="starttimepage">
+			<div class="ub ub-f1 week ub-ac ub-pc week_top">
+				<div class="ub ub-f1 ub-pc ub-fh cheng">日</div>
+				<div class="ub ub-f1 ub-pc ub-fh">一</div>
+				<div class="ub ub-f1 ub-pc ub-fh">二</div>
+				<div class="ub ub-f1 ub-pc ub-fh">三</div>
+				<div class="ub ub-f1 ub-pc ub-fh">四</div>
+				<div class="ub ub-f1 ub-pc ub-fh">五</div>
+				<div class="ub ub-f1 ub-pc ub-fh cheng">六</div>
+			</div>
+			<div class="ub ub-ver date">
+				<div class="ub ub-ver datelist datelist01">
+					<div class="ub ub-ac ub-pc colgloden ft09 datewarming">
+						最多可预售15天以内的票
+					</div>
+					<div class="ub ub-ac ub-pc month cander_top">2017年5月</div>
+					<ul class="days cander_box">
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">1</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">2</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">3</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">4</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">5</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">6</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">7</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">8</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">9</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">10</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">11</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">12</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">13</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">14</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">15</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">16</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">17</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">18</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">19</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">20</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">21</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">22</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">23</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">24</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">25</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">26</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">27</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">28</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">29</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">30</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+					</ul>
+
+					<div class="ub ub-ac ub-pc month cander_top dhide">2017年5月</div>
+					<ul class="days cander_box">
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">1</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">2</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">3</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">4</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">5</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">6</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">7</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">8</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">9</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">10</span>
+						</li>
+						<li class="ub  ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc ash data_item">11</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">12</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">13</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">14</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">15</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">16</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">17</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">18</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">19</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">20</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">21</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">22</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">23</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">24</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">25</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">26</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">27</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">28</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">29</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item">30</span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+						<li class="ub ub-ac ub-pc">
+							<span class="ub ub-ac ub-pc data_item"></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--车次列表模板-->
+		<div class="cartemp dhide">
+			<div class="ub car_item caritem">
+				<div class="ub  ub-ver ub-pc ub-ac caritem_left">
+					<div class="ub">
+						<span class="ub usetime colhgreen ft25">00:00</span>
+					</div>
+					<div class="ub sc-text umar-t ft080">
+						<span class="bcdm"></span>次
+					</div>
+				</div>
+				<div class="ub ub-ac ub-pc ub-ver ub-f1">
+					<div class="ub ub-ac umar-t caritem_top">
+						<span class="ub ft25 startStation">昭通</span>
+						<span>
+								<img class="carimg" src="../common/images/carimg.png" />
+							</span>
+						<span class="ub ft25 endStation">昆明</span>
+					</div>
+					<div class="ub sc-text">
+						<div class="ub ub-ac ft080 umar-l seatbox">
+							余<span class="FRemaining">7</span>张
+
+						</div>
+						<div class="ub ub-ac sc-text ft080 umar-l soldout dhide">
+							已售完
+						</div>
+					</div>
+				</div>
+				<div class="ub caritem_right ub-ac ub-pe colgloden">
+					￥<span class="ub ticketprice ft25">0</span>
+				</div>
+			</div>
+		</div>
+		<!--请求加载显示-->
+		<div class='load-wrapper'>
+			<img src='../common/images/load.gif'>
+		</div>
+		<!--//fullticketprice="{{Math.floor(k.pj)}}" halfticketprice="{{Math.floor(k.bpj)}}" carnum="{{k.cphm}}" checknum="{{k.jpk}}"-->
+		<!--<script type="text/html" id="carListTmp">
+			{{each}}
+			<div class="ub car_item caritem" onclick="carDetail(this)" classid="{{$value.id}}" cartype="{{$value.car.model}}" bcdm="{{$value.classCode}}" startline="{{$value.orginName}}" endline="{{$value.finishName}}" stationline="{{$value.lines.name}}">
+				<div class="ub ub-ac caritem_left">
+					<span class="ub usetime colhgreen ft25">{{$value.classDateTime.substr(11)}}</span>
+				</div>
+				<div class="ub ub-ac ub-pc ub-ver ub-f1">
+					<div class="ub ub-ac umar-t caritem_top">
+						<span class="ub ft25 startStation">{{$value.orginName}}</span>
+						<span>
+								<img class="carimg" src="../common/images/carimg.png">
+							</span>
+						<span class="ub ft25 endStation">{{$value.finishName}}</span>
+					</div>
+					<div class="ub sc-text">
+						<div class="ub ub-ac ft080 umar-l seatbox">
+							余<span class="FRemaining">{{$value.remSeat}}</span>张
+						</div>
+						<div class="ub ub-ac sc-text ft080 umar-l soldout dhide">
+							已售完
+						</div>
+					</div>
+				</div>
+				{{each $value.road as r}}
+					{{if r.siteId==endSiteId}}
+						<div class="ub caritem_right ub-ac ub-pe colgloden">
+							￥<span class="ub ticketprice ft25">{{r.price['001']}}</span>
+						</div>
+					{{/if}}
+				{{/each}}
+			</div>
+			{{/each}}
+		</script>-->
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../common/js/mui.min.js"></script>
+	<script src="../common/js/cardata.js"></script>
+	<script src="../common/js/Fsuper.js?v=1.5"></script>
+	<script type="text/javascript" src="../common/js/template.js"></script>
+	<script type="text/javascript">
+	
+		var stationBaseCode = localStorage.getItem("stationBaseCode");
+		$(function() {
+			location.hash = 'mainpage'; //每次页面重新加载时都回到page1
+			window.onhashchange = function(e) {
+				//当hash变化时，执行hashchange事件，该事件具有oldURL和newURL两个事件属性，分别代表前一个URL和目前的URL
+				var oldHash = e.oldURL.split('#')[1]; //取得前一个hash
+				var newHash = e.newURL.split('#')[1]; //取得当前hash
+				//显示当前page
+				if(oldHash == "mainpage") {
+					return;
+				}
+				//隐藏前一个page
+				$("#" + oldHash).addClass("pt-page-moveToTop").removeClass("pt-page-moveFromTop");
+
+			};
+			//加载日期
+			var usedate = localStorage.getItem("usedate");
+			$(".timetxt").text(usedate);
+			var weekArray = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+			var week = weekArray[new Date(usedate).getDay()];
+			$(".dbweek").text(week);
+			//加载车次列表
+			if(stationBaseCode == 12) {
+				getcarlist_km(); //出发地为昆明市时候获取班次列表
+			} else {
+				getcarlist();
+			}
+			getstae();
+
+		});
+
+		//页面切换
+		$(".pagebox").click(function() {
+			var id = $(this).attr("id");
+			id = id + "page";
+			$("#" + id).removeClass("dhide").addClass("pt-page-moveFromTop");
+			$("#" + id).removeClass("pt-page-moveToTop");
+			location.hash = id;
+		});
+
+		//页面关闭
+		function dbgoback() {
+			$(".switch_page").addClass("pt-page-moveToTop").removeClass("pt-page-moveFromTop");
+		}
+
+		$(".switch_page").click(function() {
+
+			dbgoback();
+		});
+
+		//关闭日历选择
+		$(".closeback").on("click", function() {
+			$(".time_box").addClass("dhide");
+		});
+
+		//打开日历选择
+		$(".choosetime").on("click", function() {
+			$(".time_box").removeClass("dhide");
+		});
+		//日期加减
+		function getNextDay(d) {
+			d = new Date(d);
+			d = +d + 1000 * 60 * 60 * 24;
+			d = new Date(d);
+			var weekArray = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+			var week = weekArray[new Date(d).getDay()];
+			$(".dbweek").text(week);
+			//格式化
+			var year = d.getFullYear();
+			var month = d.getMonth() + 1;
+			var day = d.getDate();
+			if(month < 10) {
+				month = '0' + month;
+			}
+			if(day < 10) {
+				day = '0' + day;
+			}
+			return year + '-' + month + '-' + day;
+
+		}
+
+		function getLastDay(d) {
+
+			d = new Date(d);
+			d = +d - 1000 * 60 * 60 * 24;
+			d = new Date(d);
+			d = new Date(d);
+			var weekArray = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+			var week = weekArray[new Date(d).getDay()];
+			$(".dbweek").text(week);
+			//格式化
+			var year = d.getFullYear();
+			var month = d.getMonth() + 1;
+			var day = d.getDate();
+			if(month < 10) {
+				month = '0' + month;
+			}
+			if(day < 10) {
+				day = '0' + day;
+			}
+			return year + '-' + month + '-' + day;
+
+		}
+
+		$("#backleft").click(function() {
+			var currtime = $(".timetxt").text();
+			var now = new Date();
+			var year = now.getFullYear();
+			var month = now.getMonth() + 1;
+			var day = now.getDate();
+			if(month < 10) {
+				month = '0' + month;
+			}
+			if(day < 10) {
+				day = '0' + day;
+			}
+			today = year + '-' + month + '-' + day;
+			var start = new Date(currtime.replace("-", "/").replace("-", "/"));
+			var end = new Date(today.replace("-", "/").replace("-", "/"));
+			if(end < start) {
+				currtime = getLastDay(currtime);
+				$(".timetxt").text(currtime);
+			}
+			$('.car_list').empty();
+			//$(".warming").addClass("dhide");
+			if(stationBaseCode == 12) {
+				getcarlist_km();
+			} else {
+				getcarlist();
+			}
+		});
+		$("#backright").click(function() {
+			var currtime = $(".timetxt").text();
+			currtime = getNextDay(currtime);
+			$(".timetxt").text(currtime);
+			$('.car_list').empty();
+			//$(".warming").addClass("dhide");
+			if(stationBaseCode == 12) {
+				getcarlist_km();
+			} else {
+				getcarlist();
+			}
+		});
+
+		//下拉刷新具体业务实现
+		mui.init({
+			pullRefresh: {
+				container: '.pullrefresh',
+				down: {
+					callback: pulldownRefresh
+				}
+			}
+		});
+
+		function pulldownRefresh() {
+			setTimeout(function() {
+				$('.car_list').empty();
+				if(stationBaseCode == 12) {
+					getcarlist_km();
+				} else {
+					getcarlist();
+				}
+				mui('.pullrefresh').pullRefresh().endPulldownToRefresh();
+			}, 1500);
+		}
+
+		//获取出发地为昆明的班次列表
+		var endSiteId = localStorage.getItem('endcode');
+
+		function getcarlist_km() {
+			$(".load-wrapper").show();
+			var classDate = $(".timetxt").html();
+
+			var furl = "/YunSPOrderManage/YunSPOrderWX/GetNorthClass";
+			var parm = {
+				classDate: classDate,
+				endSiteId: endSiteId,
+
+			}
+			$.ajax({
+				url: Serverurl + furl,
+				type: "post",
+				async: false,
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var type = result.type;
+					var datas = JSON.parse(result.resultdata);
+					var length = datas.length;
+					if(type == 1) {
+						$(".load-wrapper").hide();
+					}
+					if(type == "false" || length <= 0) {
+						//$(".warming").removeClass("dhide");
+						return;
+					}
+
+					if(length > 0) {
+						for(var i = 0; i < length; i++) {
+							addkmstation(datas[i]);
+						}
+					} else {
+						//$(".warming").removeClass("dhide");
+						return;
+					}
+				}
+			});
+		}
+
+		function addkmstation(datas) {
+			var startstion = localStorage.getItem('startstion');
+			var endstion = localStorage.getItem('endstion');
+			var list = $(".car_list");
+			var usetime = datas.classTime;
+			var FRemaining = datas.remSeat;
+			var road = datas.road;
+			var ticketprice = datas.road[0].price['001'];
+			for(var i = 0; i < road.length; i++) {
+				if(road[i].siteId == endSiteId) {
+					ticketprice = road[i].price['001'];
+				}
+			}
+			ticketprice = Math.floor(ticketprice);
+			var setting = datas.ksps;
+			var carnum = datas.cphm; //车牌号码
+			var checknum = datas.jpk; //检票口代码
+			var fullTicketPrice = ticketprice;
+			//var halfTicketPrice = Math.floor(datas.bpj);
+			var startname = datas.orginName;
+			var endname = datas.finishName;
+			var cartype = datas.carType;
+			var classId = datas.id;
+			var stationline = datas.lines.name;
+			var ss = stationline.split("-");
+			var startline = ss[0];
+			var endline = ss[1];
+			var bcdm = datas.classCode;
+			if(startstion == "昆明" && endstion == "盐津" && (bcdm.indexOf("YJS") != -1)) {
+				return
+			} else {
+				var item = $(".cartemp .caritem").clone();
+			}
+
+			item.find(".FRemaining").text(FRemaining);
+			item.attr('onclick', "carDetail(this)");
+			item.find(".usetime").text(usetime);
+			item.find(".startStation").text(startstion);
+			item.find(".endStation").text(endstion);
+			item.find(".ticketprice").text(ticketprice);
+			item.attr("classId", classId);
+			item.attr("ischeckseat", 0);
+			item.attr("insuranceprice", 0);
+			item.attr("insurancecode", 0);
+			item.attr("fullTicketPrice", fullTicketPrice);
+			//item.attr("halfTicketPrice", halfTicketPrice);
+			item.attr("carnum", carnum);
+			item.attr("checknum", checknum);
+			item.attr("cartype", cartype);
+			item.attr("bcdm", bcdm);
+			item.find(".bcdm").text(bcdm);
+			item.attr("startline", startline);
+			item.attr("endline", endline);
+			item.attr("stationline", stationline);
+			list.append(item);
+		}
+
+		//		function getcarlist_km(){
+		//			$(".load-wrapper").show();
+		//			var classDate=$(".timetxt").html();
+		//			var endSiteId=localStorage.getItem('endcode');
+		//			$.get(""+Serverurl+"/YunSPOrderManage/YunSPOrderWX/GetNorthClass",{classDate:classDate,endSiteId:endSiteId},function(res){
+		//				if(res.type==1){
+		//					$(".load-wrapper").hide();
+		//					var data=JSON.parse(res.resultdata);
+		//					data.endSiteId=endSiteId;
+		//					template.helper('Math', Math);
+		//					var html=template('carListTmp',data);
+		//					$(".car_list").html(html);
+		//				}else{
+		//					$(".car_list").html('<p style="text-align:center;line-height:40px;">'+res.message+'</p>');
+		//				}
+		//			},"json");
+		//		}
+
+		//加载车次列表
+		var startstion, endstion;
+
+		function getcarlist() {
+			var carinfor = localStorage.getItem("carinfor");
+			var datas = JSON.parse(carinfor);
+			startstion = datas.startstion;
+			endstion = datas.endstion;
+			var usedate = $(".timetxt").text();
+			var startcode = datas.startcode;
+			var endcode = datas.endcode;
+			var basecode = localStorage.getItem("basecode");
+			var furl = "/YunSPOrderManage/YunSPOrderWX/WebServicAction";
+			var senddata = {
+				busDate: usedate,
+				cczDm: basecode,
+				desStationID: endcode,
+				cks: "0"
+			}
+			var postdata = JSON.stringify(senddata);
+			var parm = {
+				currentStationId: startcode,
+				currentModel: "hjbc",
+				currentOp: "getBus",
+				parmsOrDataJson: postdata
+
+			}
+			$.ajax({
+				url: Serverurl + furl,
+				type: "post",
+				async: false,
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var type = result.jieguo;
+					var datas = result.data;
+					var length = datas.length;
+					if(type == "false" || length <= 0) {
+						//$(".warming").removeClass("dhide");
+						return;
+					}
+
+					if(length > 0) {
+						for(var i = 0; i < length; i++) {
+							addstation(datas[i]);
+						}
+					} else {
+						//$(".warming").removeClass("dhide");
+						return;
+					}
+				}
+			});
+		}
+
+		function addstation(datas) {
+
+			var list = $(".car_list");
+			var usetime = datas.fcsj;
+			var FRemaining = datas.ksps;
+			var ticketprice = datas.pj;
+			ticketprice = Math.floor(ticketprice);
+			var setting = datas.ksps;
+			var carnum = datas.cphm; //车牌号码
+			var checknum = datas.jpk; //检票口代码
+			var fullTicketPrice = ticketprice;
+			var halfTicketPrice = Math.floor(datas.bpj);
+			var endname = datas.zdzmc;
+			var cartype = datas.cxmc;
+			var classId = datas.bcdm;
+			var data01 = datas.fcrq;
+			var data02 = datas.fcsj;
+			var stationline = datas.xlmc;
+			var ss = stationline.split("-");
+			var startline = ss[0];
+			var endline = ss[1];
+			var bcdm = datas.bcdm;
+			var isseat = datas.ischoiceseat; //是否可以选座
+			var insuranceprice = datas.insuranceprice; //保险金额
+			var insurancecode = datas.insurancecode; //保险编号
+			var endtime = data01 + " " + data02;
+			var ttd = new Date(endtime.replace("-", "/").replace("-", "/"));
+			var starttime = new Date(ttd);
+			var now = new Date();
+			var end = starttime;
+			var result = Math.floor(end - now) / 1000;
+			var item = $(".cartemp .caritem").clone();
+			item.find(".FRemaining").text(FRemaining);
+			if(result <= 0 || setting == 0) {
+				//				item.find(".usetime").removeClass("colhgreen").addClass("sc-text");
+				//				item.find(".caritem_right").removeClass("colgloden").addClass("sc-text");
+				//				item.find(".FRemaining").text(0);
+				//				item.attr('onclick', "carwarm(this)");
+				return;
+			} else {
+
+				item.attr('onclick', "carDetail(this)");
+			}
+
+			item.find(".usetime").text(usetime);
+			item.find(".startStation").text(startstion);
+			item.find(".endStation").text(endstion);
+
+			item.find(".ticketprice").text(ticketprice);
+			item.attr("classId", classId);
+			item.attr("ischeckseat", isseat);
+			item.attr("insuranceprice", insuranceprice);
+			item.attr("insurancecode", insurancecode);
+			item.attr("fullTicketPrice", fullTicketPrice);
+			item.attr("halfTicketPrice", halfTicketPrice);
+			item.attr("carnum", carnum);
+			item.attr("checknum", checknum);
+			item.attr("cartype", cartype);
+			item.attr("bcdm", bcdm);
+			item.find(".bcdm").text(bcdm);
+			item.attr("startline", startline);
+			item.attr("endline", endline);
+			item.attr("stationline", stationline);
+			list.append(item);
+		}
+		//绑定tap事件
+		mui(".pullrefresh").on('tap', '.caritem', function(event) {
+			this.click();
+		});
+		var State, AppId, AppSecret, PayOpenId;
+		var posttime = 0;
+
+		function getstae() {
+			var openid = localStorage.getItem("openid");
+			var furl = "/YunSPOrderManage/AboutClassAPI/GetPublicSignInfoJson?publicSignKey=Zj&openid=" + openid;
+			$.ajax({
+				url: Serverurl + furl,
+				type: "get",
+				async: false,
+				dataType: "json",
+				success: function(result) {
+					if(result.resultdata == null || result.resultdata == "") {
+						posttime++;
+						if(posttime <= 3) {
+							getstae();
+							return;
+						} else {
+							PayOpenId = null;
+							return;
+						}
+					}
+					State = result.resultdata.State;
+					AppId = result.resultdata.AppId;
+					AppSecret = result.resultdata.AppSecret;
+					PayOpenId = result.resultdata.PayOpenId;
+				}
+			});
+
+		}
+
+		function carDetail(dom) {
+			var fullTicketPrice = "";
+			if(stationBaseCode == 12) {
+				fullTicketPrice = $(dom).find(".ticketprice").html();
+			} else {
+				fullTicketPrice = $(dom).attr("fullTicketPrice");
+			}
+			var halfTicketPrice = $(dom).attr("halfTicketPrice");
+			var classId = $(dom).attr("classId");
+			var carnum = $(dom).attr("carnum");
+			var checknum = $(dom).attr("checknum");
+			var cartype = $(dom).attr("cartype");
+			var bcdm = $(dom).attr("bcdm");
+			var startline = $(dom).attr("startline");
+			var endline = $(dom).attr("endline");
+			var usedate = $(".timetxt").text();
+			var usetime = $(dom).find(".usetime").text();
+			var bustime = usedate + " " + usetime;
+			var stationline = $(dom).attr("stationline");
+			var ischeckseat = $(dom).attr("ischeckseat");
+			var insuranceprice = $(dom).attr("insuranceprice");
+			var insurancecode = $(dom).attr("insurancecode");
+			localStorage.setItem("classId", classId);
+			localStorage.setItem("usedate", usedate);
+			localStorage.setItem("usetime", usetime);
+			localStorage.setItem("bustime", bustime);
+			localStorage.setItem("fullTicketPrice", fullTicketPrice);
+			localStorage.setItem("halfTicketPrice", halfTicketPrice);
+			localStorage.setItem("carnum", carnum);
+			localStorage.setItem("checknum", checknum);
+			localStorage.setItem("cartype", cartype);
+			localStorage.setItem("bcdm", bcdm);
+			localStorage.setItem("endline", endline);
+			localStorage.setItem("startline", startline);
+			localStorage.setItem("stationline", stationline);
+			localStorage.setItem("ischeckseat", ischeckseat);
+			localStorage.setItem("insuranceprice", insuranceprice);
+			localStorage.setItem("insurancecode", insurancecode);
+			if(ischeckseat == 0 || ischeckseat =="" || ischeckseat == null) {
+				localStorage.setItem("order_id", "");
+				mui.openWindow({
+					url: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + AppId + '&redirect_uri=https%3A%2F%2Fwechat.laiyunyou.cn%2FWapWX%2Fweb%2Fsureorder%2Fsureorder.html&response_type=code&scope=snsapi_base&state=' + State + '#wechat_redirect&AppSecret=' + AppSecret,
+					id: 'sureorder',
+				});
+			}
+			if(ischeckseat == 1) {
+				mui.openWindow({
+					url: '../seat/seat.html?v=1.4',
+					id: 'seat',
+				});
+			}
+
+			//上线之后链接换回
+			/*mui.openWindow({
+				url: '../sureorder/sureorder.html',
+				id: 'sureorder',
+			});*/
+
+		}
+
+		//过期车次操作
+		function carwarm(dom) {
+			mui.alert('该班次已售完，请您选择其他时段的班次！', '系统提示');
+			return;
+		}
+	</script>
+
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title>退票</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/mui.min.css" />
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/idangerous.swiper.css" />
+		<link rel="stylesheet" href="../common/css/icon.css" />
+		<link rel="stylesheet" href="../common/css/ui-base.css" />
+		<link rel="stylesheet" href="../common/css/ui-box.css" />
+		<link rel="stylesheet" href="../common/css/ui-color.css" />
+		<link rel="stylesheet" href="../common/css/common.css?v=1" />
+		<link rel="stylesheet" href="../common/css/control.css" />
+		<link rel="stylesheet" href="css/ordersdetail.css" />
+	</head>
+
+	<body class="bc-text um-vp bc-bg bc-text">
+		<div class="ub ub-ac ub-pc time_delay ft09 colgloden dhide">
+			<div class="ub ub-ac">
+				<img class="ub ub-img delay_img" src="../common/images/addr02_active.png" />
+			</div>
+			<span>请在</span>
+			<span class="minutes">0</span>分<span class="seconds">0</span><span>秒内完成支付</span>
+		</div>
+		<!--头部背景选择框-->
+		<div class="ub ub-ver main_top">
+			<div class="ub ub-ver index_topbar">
+				<div class="ub ft085 umar-t marl06 marr06 colwhite">
+					<div class="ub ub-ac ub-f1 ub-fh">
+						<span class="usedate">2017-01-01</span>
+					</div>
+					<div class="ub ub-ac ub-pe ub-f1 ub-fh">
+						<span class="usetime">00:00</span>发车
+					</div>
+				</div>
+				<div class="ub ub-ac colwhite marb06">
+					<div class="ub ub-pc ub-f1 sure_left ftb ft125 marl06">
+						<span class="startstation">昆明</span>
+					</div>
+					<div class="ub ub-ac ub-f1 ub-ver sure_center ft09">
+
+						<div class="ub">
+							<img src="../common/images/carimg02.png" />
+						</div>
+					</div>
+					<div class="ub ub-pc ub-f1 sure_left ftb ft125 marr06">
+						<span class="endstation">昭通</span>
+					</div>
+				</div>
+				<div class="ub ft085 umar-t marl06 marr06 colwhite">
+					<div class="ub ub-ac ub-f1 ub-fh">
+						<span>线路：</span>
+							<span class="startname"></span>
+					</div>
+					<!--<div class="ub ub-ac ub-pe ub-f1 ub-fh">
+						<span class="endname"></span>汽车站
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<!--班车信息-->
+		<div class="ub sc-text carinfor">
+			<div class="ub carinfor_left">
+				<span>班次信息</span>
+				<span class="sc-text umar-l carnum">0</span>
+				<span>次</span>
+
+			</div>
+			<div class="ub carinfor_right  ub-f1 ft09  ub-pe colgloden cancel_btn dhide" rel="unexit">
+				取消订单
+			</div>
+			<div class="ub carinfor_right  ub-f1 ft09  ub-pe colgloden gocheck dhide">
+检票
+			</div>
+		</div>
+		<div class="ub order_num dhide">
+			<div class="ub ub-ac ordernum_left">
+				<img class="ub ub-img" src="../common/images/orders-active.png" />
+			</div>
+			<div class="ub umar-l">
+				<span>订单号</span>
+				<span class="sc-text">0000</span>
+			</div>
+		</div>
+		<!--联系人列表-->
+		<div class="ub ub-ver use_list">
+
+		</div>
+		<!--保险-->
+		<div class="ub ub-ver pagebox">
+			<!--订单号-->
+			<div class="ub ub-ac ub-pc sc-text order_numbox">
+				<span>订单号</span>
+				<span class="order_txt">0</span>
+			</div>
+		</div>
+		
+		
+		<!--退票-->
+		<div class="ub footer_box refund_btn">
+			<div class="ub ub-f1 footer_btn ub-ac ub-pc">
+				退票
+			</div>
+		</div>
+		<div class="usetemp dhide">
+			<div class="ub ub-ac ub-f1 use_item haschecked" rel="checked">
+				<div class="ub ub-ac use-left">
+					<img class="ub ub-img refund-before" src="../common/images/orders04.png" />
+					<img class="ub ub-img refund-after dhide" src="../common/images/orders04_after.png" />
+				</div>
+				<div class="ub ub-ac umar-r sc-text umar-l">
+					<span class="useseat">0</span>座
+				</div>
+				<div class="ub ub-ver ub-f1 use-center umar-l">
+					<div class="ub ub-ac umar-b">
+						<span class="Fname"></span>
+						<span class="PassengerMobile marl06"></span>
+					</div>
+					<div class="ub ft085 sc-text Fidcar">
+						000
+					</div>
+				</div>
+				<div class="ub ub-ac check_box">
+					<img class="check_img check_before dhide" src="../common/images/radio_imgbefore.png" />
+					<img class="check_img check_after" src="../common/images/radio_imgafter.png" />
+				</div>
+				<div class="ub ub-ac refund-txt sc-text dhide">已退票</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../common/js/mui.min.js"></script>
+	<script type="text/javascript" src="../common/js/Fsuper.js?v=1"></script>
+	<script type="text/javascript">
+		var stationBaseCode=localStorage.getItem("stationBaseCode");
+		$(function() {
+			orderdetail();
+			orderinfor();
+			sessionStorage.setItem("refund_refresh", true);
+		});
+		
+		//加载订单列表
+		var UseDate, UseTime, Status, ClassCode, LastPayTime, EndStationName, IsTickets, StartStationName, ddOrderCode,CheckTicketStatus;
+		var OrderCode = localStorage.getItem("OrderCode");
+		var stationline = localStorage.getItem("stationline");
+
+		function orderdetail() {
+			var furl = "/YunSPOrderManage/YunSPOrderWX/YunOrderInfo?mainOrderId=" + OrderCode;
+			$.ajax({
+				url: Serverurl + furl,
+				type: "get",
+				async: false,
+				dataType: "json",
+				success: function(result) {
+					ClassCode = result.ClassCode;
+					EndStationName = result.EndStationName;
+					IsTickets = result.IsTickets;
+					CheckTicketStatus = result.CheckTicketStatus;
+					OrderCode = result.OrderCode;
+					OrderPrice = result.OrderPrice;
+					StartStationName = result.StartStationName;
+					Status = result.Status;
+					UseDate = result.UseDate;
+					UseTime = result.UseTime;
+					LastPayTime = result.LastPayTime
+					var ticketlist = result.ticketlist;
+					var length = ticketlist.length;
+					if(Status == 1) { //已支付，可退票
+
+						dotimeout();
+					}
+
+					if(Status == 2) { //已退款
+						$(".refund_btn").addClass("dhide");
+						$(".payfooter").addClass("dhide");
+						$(".cancel_btn").addClass("dhide");
+						$(".status_btn").addClass("dhide");
+						$(".deletefooter").addClass("dhide");
+						$(".gocheck").addClass("dhide");
+
+					}
+					if(Status == 3) { //已取消
+						$(".refund_btn").addClass("dhide");
+						$(".payfooter").addClass("dhide");
+						$(".cancel_btn").addClass("dhide");
+						$(".status_btn").addClass("dhide");
+						$(".deletefooter").addClass("dhide");
+						$(".status_btn").text("订单已取消");
+
+					}
+					if(length > 0) {
+						for(var i = 0; i < length; i++) {
+							adduse(ticketlist[i]);
+						}
+					} else {
+						return;
+					}
+				}
+			});
+		}
+
+		function adduse(datas) {
+			var list = $(".use_list");
+			var CheckTicketStatus = datas.CheckTicketStatus;
+			ddOrderCode = datas.OrderId;
+			var IsTickets = datas.IsTickets;
+			var OrderCode = datas.OrderCode;
+			var PassengerIdCard = datas.PassengerIdCard;
+			var PassengerMobile = datas.PassengerMobile;
+			var PassengerName = datas.PassengerName;
+			var SeatNo = datas.SeatNo;
+			var Status = datas.Status;
+			var TicketPrice = datas.TicketPrice;
+			var item = $(".usetemp .use_item").clone();
+			if(Status === 2){
+				item.find(".refund-before").addClass('dhide');
+				item.find(".refund-after").removeClass('dhide');
+				item.removeClass('haschecked');
+				item.find(".check_box").addClass('dhide');
+				item.find(".refund-txt").removeClass('dhide');
+			}else{
+				item.attr("onclick", "dbuse(this)");
+			}
+			//item = $(".usetemp .use_item").clone();
+			item.find(".Fname").text(PassengerName);
+			item.find(".Fidcar").text(PassengerIdCard);
+			item.find(".useseat").text(SeatNo);
+			item.find(".PassengerMobile").text(PassengerMobile);
+			item.attr("Status", Status);
+			item.attr("OrderId", ddOrderCode);
+			item.attr("OrderCode", OrderCode);
+			item.attr("CheckTicketStatus", CheckTicketStatus);
+			item.attr("SeatNo", SeatNo);
+			item.attr("IsTickets", IsTickets);
+			list.append(item);
+		}
+
+		function orderinfor() {
+			$(".usedate").text(UseDate);
+			$(".usetime").text(UseTime);
+			$(".startstation").text(StartStationName);
+			$(".endstation").text(EndStationName);
+			$(".startname").html(StartStationName+'<span style="margin:0 4px;">--</span>'+EndStationName);
+			$(".endname").text(EndStationName);
+			$(".order_txt").text(OrderCode);
+			$(".countmoney").text(OrderPrice);
+			$(".carnum").text(ClassCode);
+		}
+
+		
+		//退票、改签选择
+		function dbuse(dom) {
+			var check_before = $(dom).find(".check_before");
+			var check_after = $(dom).find(".check_after");
+			var rel = $(dom).attr("rel");
+			if(rel == "check") {
+				$(check_before).addClass("dhide");
+				$(check_after).removeClass("dhide");
+				$(dom).attr("rel", "checked");
+				$(dom).addClass("haschecked");
+			}
+			if(rel == "checked") {
+				$(check_before).removeClass("dhide");
+				$(check_after).addClass("dhide");
+				$(dom).attr("rel", "check");
+				$(dom).removeClass("haschecked");
+			}
+		}
+
+		
+
+		//处理是否已过发车时间
+		function dotimeout() {
+			var data01 = UseDate;
+			var data02 = UseTime;
+			var endtime = data01 + " " + data02;
+			var ttd = new Date(endtime.replace("-", "/").replace("-", "/"));
+			var starttime = new Date(ttd);
+			var now = new Date();
+			var end = starttime;
+			var result = Math.floor(end - now) / 1000;
+			if(result <= 0) {
+				$(".refund_btn").addClass("dhide");
+				
+				if(IsTickets == 0 && CheckTicketStatus == 0) {
+					$(".refund_btn").removeClass("dhide");
+					$(".gocheck").addClass("dhide");
+				}
+				
+			} else {
+				if(IsTickets == 0 && CheckTicketStatus == 0) { //已支付，未取票的可退票
+					$(".refund_btn").removeClass("dhide");
+					if(StartStationName!='昆明'){//12为昆明站，昆明不检票
+						$(".gocheck").removeClass("dhide");
+					}
+				}
+			}
+		}
+
+		//获取联系人列表信息
+		function eachlist(doms) {
+			var nsubOrderId = "";
+			var datas = {};
+			var goods = [];
+			var newobj = {};
+			if($(doms).length > 0) {
+				doms.each(function(i, item) {
+					var obj = {};
+					var subOrderId = $(item).attr("OrderId");
+					obj.subOrderId = subOrderId;
+					nsubOrderId = nsubOrderId + subOrderId + ",";
+					newobj.subOrderId = nsubOrderId;
+					goods.push(obj);
+				});
+
+			}
+			nsubOrderId = nsubOrderId.substring(0, nsubOrderId.length - 1);
+			datas.nsubOrderId = nsubOrderId;
+			return datas;
+
+		}
+
+		//去退票
+		$(".refund_btn").click(function () {
+		    //mui.alert("系统升级期间，自助退款功能暂时关闭，如需退款请联系180 8742 1671，给您带来不便深感抱歉。(服务时间为08:00-20:00)", '系统提示');
+			refund();
+		});
+
+		function refund() {
+			var furl = "/YunSPOrderManage/YunSPOrderWX/RefundOrderDZ";
+			var furlrule = "/YunSPOrderManage/YunSPOrderWX/RefundRuleYunSP";
+			var rulemsg = "";
+			var type = "";
+			//      var endtime = $(dom).siblings(".ddtime").text();
+			//      var ttd = new Date(endtime.replace("-", "/").replace("-", "/"));
+			//      var starttime = new Date(ttd);
+			//      var now = new Date();
+			//      
+			//      var end = starttime;
+			//      var dresult = Math.floor(end - now) / 1000;
+			//      if (dresult <= 2) {
+			//          mui.alert('已发车不能退票,如需退票请联系客服人员！', '系统提示');
+			//          return;
+			//      }
+
+			var list = $(".use_list .haschecked");
+			var useinfor = eachlist(list);
+			var dbsubOrderId = useinfor.nsubOrderId;
+			//console.log(dbsubOrderId);
+			var senddata = {
+				subOrderId: dbsubOrderId
+			}
+			var lenth = $(".use_list .haschecked").length;
+			if(lenth <=0){
+				mui.alert('请先选择需要退票的人', '系统提示');
+				return;
+			}
+			$.ajax({
+				url: Serverurl + furlrule,
+				type: "get",
+				async: false,
+				dataType: "json",
+				data: senddata,
+				success: function(result) {
+					rulemsg = result.message;
+					type = result.type;
+				}
+			});
+			if(type == 3) {
+				mui.alert(rulemsg, '系统提示');
+				return;
+			}
+			var btnArray = ['否', '是'];
+			mui.confirm(rulemsg, '系统提示', btnArray, function(e) {
+				if(e.index == 1) {
+					$.ajax({
+						url: Serverurl + furl,
+						type: "get",
+						async: false,
+						dataType: "json",
+						data: senddata,
+						success: function(result) {
+							var type = result.type;
+							var msg = result.message;
+							if(type == 1) {
+								mui.alert(msg, '系统提示', function() {
+									mui.back();
+								});
+							}
+							if(type == 3) {
+								mui.alert(msg, '系统提示');
+								return;
+							}
+						}
+
+					});
+				} else {
+					return;
+				}
+			})
+		}
+		$(".gocheck").click(function(){
+			 mui.back();
+		});
+	</script>
+
+</html>
